@@ -1,0 +1,40 @@
+.activity .floatright {
+  float: right;
+}
+.activity .none-padding {
+  padding: 0 !important;
+}
+.activity .addactivity {
+  float: right;
+}
+.activity .right15px {
+  right: 15px;
+}
+.activity .marginBottom20px {
+  margin-bottom: 20px;
+}
+.activity .marginBottom50px {
+  margin-bottom: 50px;
+}
+.activity .marginTop20px {
+  margin-top: 20px;
+}
+.activity .padLeft8px {
+  padding-left: 8px;
+}
+.activity table tr td {
+  vertical-align: middle;
+}
+.activity .breadcrumb {
+  background-color: #fff;
+  padding: 8px 0;
+  margin-bottom: 0;
+}
+.activity .well {
+  background-color: #fff !important;
+  min-height: 300px;
+}
+.activity .title {
+  padding: 10px;
+  font-size: 18px;
+}

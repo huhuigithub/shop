@@ -1,0 +1,118 @@
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  less dependencies when defined in the bower.json of your dependencies
+ */
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap/less/variables.less
+ */
+body {
+  color: #757575;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  outline: none;
+  font-size: 12px;
+  font-family: arial, "Hiragino Sans GB", "Microsoft YaHei", "微軟正黑體", "儷黑 Pro", sans-serif;
+}
+.browseheduServicey {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+.thumbnail {
+  height: 200px;
+}
+.thumbnail img.pull-right {
+  width: 50px;
+}
+.myheader {
+  border-radius: 1px;
+  background: url('../images/top1.gif') no-repeat;
+  width: 100%;
+  height: 80px;
+  padding-top: 20px;
+  margin-bottom: 15px;
+}
+.myheader .title {
+  font-size: 24px;
+  color: #1b4f8b;
+  font-family: 'SimHei';
+  margin-left: 50%;
+}
+.noRecord {
+  color: #aaa;
+  font-size: 24px;
+}
+.clear {
+  clear: both;
+}
+.text-r {
+  color: #FD0000;
+}
+.text-g {
+  color: #00B954;
+}
+.text-b {
+  color: #3452EE;
+}
+.text-o {
+  color: #FF8B00;
+}
+.text-p {
+  color: #A20092;
+}
+.rating {
+  color: #a9a9a9;
+  margin: 0;
+  padding: 0;
+}
+ul.rating {
+  display: inline-block;
+  outline: none;
+}
+.rating li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 1px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+.rating .filled {
+  color: #f10000;
+}
+.has-error .control-label {
+  color: #f00000;
+}
+.has-error label {
+  color: #f00000;
+}
+.has-error .help-block {
+  color: #f00000;
+}
+.has-error .box {
+  border: 1px solid #f00000;
+}
+.has-error .form-control {
+  border-color: #f00000;
+}
+.has-warning .control-label {
+  color: #ff8b00;
+}
+.has-warning label {
+  color: #ff8b00;
+}
+.has-warning .help-block {
+  color: #ff8b00;
+}
+.has-warning .box {
+  border: 1px solid #ff8b00;
+}
+.has-warning .form-control {
+  border-color: #ff8b00;
+}

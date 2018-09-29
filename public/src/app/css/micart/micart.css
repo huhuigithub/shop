@@ -1,0 +1,32 @@
+.micart .page-main {
+  padding-top: 38px;
+  padding-bottom: 38px;
+  background: #fff;
+}
+.micart .page-main .container {
+  width: 1226px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.micart .page-main .cart-empty {
+  height: 273px;
+  padding-left: 558px;
+  margin: 65px 0 130px;
+  background: url(../../../assets/images/i/cart-empty.jpg) no-repeat 124px 0;
+  background-size: 359px 273px;
+  color: #b0b0b0;
+  overflow: hidden;
+  _zoom: 1;
+}
+.micart .page-main .cart-empty .btn {
+  width: 170px;
+  height: 48px;
+  line-height: 48px;
+  padding: 0;
+  border-radius: 0;
+}
+.micart .page-main .btn-primary {
+  background: #ff6700;
+  border-color: #ff6700;
+  color: #fff;
+}

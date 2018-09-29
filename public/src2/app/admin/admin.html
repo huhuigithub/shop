@@ -1,0 +1,58 @@
+<div class="users">
+  <ul class="breadcrumb">
+    <li><a ui-sref="home">主页</a></li>
+    <li>管理员账户管理</li>
+  </ul>
+  <div class="title"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;管理员账户管理</div>
+  <div class="well" style="width:98%;">
+    <table class="table" st-table="displayedCollection" st-safe-src="vm.adminlist">
+      <thead>
+        <tr>
+          <th colspan="6">
+            <div class="searchbox col-sm-12 none-padding">
+              <input class="form-control" st-search placeholder="请输入姓名、手机、状态、日期 查询" class="input form-control" type="search"/>
+            </div>
+          </th>
+          <th colspan="2">
+            <div class="addAdmin">
+              <a class="btn btn-success btn-sm" ui-sref="adminContent.createAdmin">
+              <i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp;新增管理员</a>
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th>序号</th>
+          <th st-sort="adminName" style="cursor: pointer;">姓名</th>
+          <th st-sort="adminPhone" style="cursor: pointer;">手机号码</th>
+          <th st-sort="adminRole" style="cursor: pointer;">职务</th>
+          <th st-sort="adminStatus" style="cursor: pointer;">状态</th>
+          <th st-sort="adminCreateTime" style="cursor: pointer;">创建时间</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in displayedCollection">
+          <td>{{$index+1}}</td>
+          <td>{{item.adminName}}</td>
+          <td>{{item.adminPhone}}</td>
+          <td>{{item.adminRole}}</td>
+          <td>{{item.adminStatus}}</td>
+          <td>{{item.adminCreateTime | limitTo:10}}</td>
+          <td><a class="btn btn-success btn-sm" ui-sref="adminContent.updateAdmin({adminId : item.adminId})">编辑</a>&nbsp;&nbsp;<a class="btn btn-danger btn-sm" ng-click="vm.deleteAdminById(item.adminId)">删除</a></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="8" class="text-center">
+            <div st-items-by-page="10" st-pagination="" st-template="app/users/pagination.custom.html"></div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="clear"></div>
+  </div>
+  <div class="row clearfix">
+
+  </div>
+
+</div>

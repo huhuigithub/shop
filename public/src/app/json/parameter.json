@@ -1,0 +1,37 @@
+{
+    "RAM":[
+        {"index":"1","RAMsize":"1GB" },
+        {"index":"2","RAMsize":"2GB" },
+        {"index":"3","RAMsize":"3GB" },
+        {"index":"4","RAMsize":"4GB" },
+        {"index":"5","RAMsize":"6GB" },
+        {"index":"5","RAMsize":"8GB" }
+    ],
+    "ROM":[
+        {"index":"1","ROMsize":"16GB" },
+        {"index":"2","ROMsize":"32GB" },
+        {"index":"3","ROMsize":"64GB" },
+        {"index":"4","ROMsize":"128GB" },
+        {"index":"5","ROMsize":"256GB" }
+    ],
+    "color":[
+        {"color":"白色","imgUrl":"http://olau2z5k7.bkt.clouddn.com/bai.png"},
+        {"color":"粉色","imgUrl":"http://olau2z5k7.bkt.clouddn.com/fen.png"},
+        {"color":"黑色","imgUrl":"http://olau2z5k7.bkt.clouddn.com/hei.png"},
+        {"color":"金色","imgUrl":"http://olau2z5k7.bkt.clouddn.com/jin.png" },
+        {"color":"灰色","imgUrl":"http://olau2z5k7.bkt.clouddn.com/qianhui.jpg"},
+        {"color":"银色","imgUrl":"http://olau2z5k7.bkt.clouddn.com/yin.jpg"}
+    ],
+    "type":[
+        {"index":"1","type":"手机"},
+        {"index":"2","type":"平板"},
+        {"index":"3","type":"笔记本"},
+        {"index":"4","type":"电视"},
+        {"index":"5","type":"路由器"}
+    ],
+    "screenSize":[
+        {"index":"1","size":"12.5英寸"},
+        {"index":"2","size":"13.3英寸"}
+    ]
+}
+

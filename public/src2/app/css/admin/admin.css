@@ -1,0 +1,79 @@
+.admin {
+  width: 95%;
+  margin: 0 auto;
+}
+.admin .clear {
+  clear: both;
+}
+.admin .adduser {
+  float: right;
+  padding-right: 8px;
+}
+.admin .none-padding {
+  padding: 0 !important;
+}
+.admin .marginbottom20px {
+  margin-bottom: 20px;
+}
+.admin .marginbottom30px {
+  margin-bottom: 30px;
+}
+.admin table {
+  text-align: center;
+}
+.admin table tr th {
+  text-align: center;
+  vertical-align: middle;
+}
+.admin table tr td {
+  vertical-align: middle;
+}
+.admin .searchbox {
+  position: relative;
+  float: right;
+  margin-left: 20px;
+}
+.admin .searchbox input {
+  text-indent: 20px;
+}
+.admin .searchicon {
+  position: absolute;
+  line-height: 34px;
+  color: #ccc;
+  left: 10px;
+}
+.admin .searchinput {
+  text-indent: 20px;
+}
+.admin .createuser .marginbottom20px,
+.admin .updateuser .marginbottom20px {
+  margin-bottom: 20px;
+}
+.admin .createuser .marginbottom30px,
+.admin .updateuser .marginbottom30px {
+  margin-bottom: 30px;
+}
+.admin .select-page {
+  width: 50px;
+  text-align: center;
+}
+.admin .pagination li a input {
+  padding: 0;
+  margin: -5px 0;
+}
+.admin .breadcrumb {
+  display: block;
+  background-color: #fff;
+  padding: 8px 0;
+  margin-bottom: 0;
+  position: relative;
+  float: right;
+}
+.admin .well {
+  background-color: #fff;
+  min-height: 300px;
+}
+.admin .title {
+  padding: 10px;
+  font-size: 18px;
+}

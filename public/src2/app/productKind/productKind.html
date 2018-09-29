@@ -1,0 +1,52 @@
+<div class="product">
+  <ul class="breadcrumb">
+    <li><a ui-sref="home">主页</a></li>
+    <li class="active">商品分类管理</li>
+  </ul>
+  <div class="title">商品分类管理</div>
+  <div class="well">
+  <div class="top marginTop10px">
+    <span>
+      <a ui-sref="productKindContent.createProductKind" class="addactivity btn btn-success"><span class="glyphicon glyphicon-plus"></span>新建商品分类</a>
+    </span>
+  </div>
+  <div class="product-list">
+    <table class="table text-center" style="word-break:break-all; word-wrap:break-all;" st-table="displayedCollection" st-safe-src="vm.productKindlist">
+      <tr class="row">
+        <tr>
+          <th colspan="8">
+            <div class="searchbox col-sm-12 none-padding">
+              <input class="form-control" st-search placeholder="请输入商品名称、商品品牌、商品版本  商品类型、商品价格查询" class="input form-control" type="search"/>
+            </div>
+          </th>
+        </tr>
+      </tr>
+      <thead class="row">
+        <th st-sort="productName">商品名称</th>
+        <th st-sort="productType">商品类型</th>
+        <th st-sort="productBrand">商品品牌</th>
+        <th st-sort="productImg">商品图片</th>
+        <th st-sort="productName">操作</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in displayedCollection">
+          <td><a ui-sref="productKindContent.updateProductKind({kindId : item.kindId})">{{item.productName}}</a></td>
+          <td>{{item.productType}}</td>
+          <td>{{item.productBrand}}</td>
+          <td><img style="width:60px;height:auto;" ng-src="{{item.productImg}}"></td>
+          <td><a href="" ng-click="vm.deleteProductKindById(item.kindId)">删除</a></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="8" class="text-center">
+            <div st-items-by-page="10" st-pagination="" st-template="app/users/pagination.custom.html"></div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <div ng-show="!vm.productKindlist" class="noRecord text-center">暂无商品</div>
+  </div>
+</div>
+<div class="clearfix"></div>

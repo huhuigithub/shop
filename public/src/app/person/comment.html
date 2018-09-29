@@ -1,0 +1,57 @@
+<div class="person">
+  <ul class="breadcrumb">
+    <li><a ui-sref="home">主页</a></li>
+    <li><a ui-sref="orderContent">我的订单</a></li>
+  </ul>
+  <div class="consult">
+    <h4 class="text-center">商品评价</h4>
+    <div class="consult_content">
+      <div class="text-center">订单号：{{vm.order.orderId}}</div>
+      </div>
+    <form>
+      <div class="consult_info">
+        <div class="col-sm-4 text-left">
+          <div class="col-sm-12 text-center">
+            <img style="width:auto;height:100px;margin:0 auto" ng-src="{{vm.product.productInfo.productImg}}">
+            <div class="clear"></div>
+          </div>
+          <div class="product_info">
+            <div>{{vm.product.productInfo.productName}}&nbsp;&nbsp;{{vm.product.productInfo.productVersion.ver1}}&nbsp;&nbsp;{{vm.product.productInfo.productVersion.ver2}}</div>
+            <div>{{vm.product.productInfo.productColor.color}}&nbsp;&nbsp;{{vm.product.productInfo.productPrice}}元</div>
+          </div>
+        </div>
+        <div class="col-sm-8 user_info">
+          <span style="font-size:18px;">
+            <div class="form-group">  
+              <div star rating-value="ratingVal" max="max" on-hover="onHover" on-leave="onLeave" readonly="{{readonly}}" class="col-sm-6"></div> 
+              <div class="col-sm-6">评分：{{ratingVal}}</div> 
+            </div> 
+            <div class="form-group">
+              <textarea class="form-control" name="c" ng-model="vm.commentCon" placeholder="请输入商品评价" rows="7"></textarea>
+            </div>
+            <div class="form-group col-sm-12">
+              <label for="firstname" class="col-sm-2 control-label">商品图片</label>
+              <div class="col-sm-10">
+                <span class="imgbox" ng-if="vm.showImg">
+                  <img ng-src="{{vm.showImg}}" id="img0" >
+                </span>
+                <a href="javascript:;" class="btn btn-info file">
+                  <input type="file" name="file0" id="file0" multiple="multiple" />+</i>
+                </a>
+                <!-- <a class="btn btn-success" ng-click="vm.uploadFile('0')">上传图片</a> -->
+              </div>
+            </div>
+          </span>  
+          <div class="form-group">
+            <button class="btn btn-success form-control" ng-click="vm.commentOrder()">提交</button>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      
+    </form>
+        
+    </div>
+  </div>
+ </div>

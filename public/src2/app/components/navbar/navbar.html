@@ -1,0 +1,38 @@
+<nav class="navbar" style="background-color:#424242;min-height:600px;font-size:14px;border-radius:0;">
+  <ul class="nav nav-stacked" style="color:#fff">
+    <li class="text-left"><a class="myli" ng-href="/#/home"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;主页</a>
+    </li>
+    <li class="text-left">
+      <a class="myli" ui-sref="adminContent" ng-show="vm.loginAdminData.adminRole==='超级管理员'"><i
+      class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;管理员账户管理</a>
+    </li>
+
+    <li class="text-left">
+      <a class="myli" ui-sref="usersContent"><i
+      class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;用户账户管理</a>
+    </li>
+
+    <li class="text-left">
+      <a class="myli" ui-sref="productKindContent">
+        <i class="fa fa-shopping-bag" aria-hidden="true"></i>&nbsp;&nbsp;商品分类管理
+      </a>
+    </li>
+    <li class="text-left">
+      <a class="myli" ui-sref="productContent">
+        <i class="fa fa-shopping-bag" aria-hidden="true"></i>&nbsp;&nbsp;商品个体管理
+      </a>
+    </li>
+
+    <li class="text-left">
+      <a class="myli" ui-sref="orderContent">
+        <i class="fa fa-th-list" aria-hidden="true"></i>&nbsp;&nbsp;用户订单管理
+      </a>
+    </li>
+    <li class="text-left">
+      <a class="myli" ui-sref="commentContent">
+        <i class="fa fa-th-list" aria-hidden="true"></i>&nbsp;&nbsp;商品评价管理
+      </a>
+    </li>
+  </ul>
+
+</nav>

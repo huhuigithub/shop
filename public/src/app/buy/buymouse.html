@@ -1,0 +1,156 @@
+<div class="buy">
+  <ul class="breadcrumb">
+    <li><a ui-sref="indexContent">主页</a></li>
+    <li><a >鼠标</a></li>
+    <li>{{vm.checkProduct.productName}}</li>
+  </ul>
+  <div class="container">
+    <div class="pro-view">
+      <img ng-src="{{vm.productImg}}" id="" style="height: 80%;">
+      <span ng-if="!vm.productImg">图片未获取到</span>
+    </div>
+    <div class="pro-info">
+      <div class="pro-title clearfix">
+        <h1>
+          <span class="pro-name">购买 {{vm.checkProduct.productName}}</span>
+          <span class="pro-price ">{{vm.checkProduct.productPrice}} 元</span>
+        </h1>
+      </div>
+        <div>
+          <div class="pro-choose-step"> 
+            <div class="step-title"> 
+              1.选择版本
+              <span class="pro-version-desc"></span> 
+            </div> 
+            <ul class="step-list clearfix">  
+              <li ng-class="{'noactive':$index !=vm.chosedIndex,'active':$index ==vm.chosedIndex}"  ng-repeat="item in vm.version track by $index" ng-click="vm.selectVersion(item,$index)">&nbsp;{{item.ver1}}&nbsp;{{item.ver2}}&nbsp;</li>  
+            </ul>
+          </div>
+          <!-- <div class="pro-choose-step"> 
+            <div class="step-title"> 
+              2. 选择颜色
+              <span class="pro-version-desc"></span> 
+            </div> 
+            <ul class="step-list clearfix">  
+              <li ng-class="{'noactive':$index!==vm.colorIndex,'active':$index ==vm.colorIndex}" ng-repeat="item in vm.product track by $index" ng-click="vm.selectProductBuy(item,$index)" ng-if="vm.product">  
+                <img style="width: auto;height: 30px;vertical-align: middle;" ng-src="{{item.productImg}}">&nbsp;{{item.productColor.color}}  
+              </li>  
+            </ul>
+          </div> -->
+        </div>
+      <div class="choose-result-msg" id="J_chooseResultMsg">
+        <span class="msg-tit">您选择了以下产品:</span>
+        <p class="msg-bd">{{vm.checkProduct.productName}} {{vm.checkProduct.productVersion.ver1}}&nbsp; {{vm.checkProduct.productPrice}} 元</p>
+      </div>
+      <div class="pro-choose-result" id="J_chooseResult">
+        <a href="javascript:void(0);" class="btn btn-primary" ng-click="vm.buyShop()"> 立即购买 </a>
+      </div>
+      <div class="pro-choose-result hide" id="J_chooseResultInit">
+        <a href="javascript:void(0);" class="btn btn-dakeLight"> 下一步 </a>
+      </div>
+    </div>
+  </div>
+  <ul class="nav nav-pills " role="tablist">
+    <li role="presentation" class="active" ng-click="vm.check('1')">
+      <a href="" role="tab" data-toggle="tab">商品信息</a>
+    </li>
+    <li role="presentation" ng-click="vm.check('2')">
+      <a href="" role="tab" data-toggle="tab">商品评价</a>
+    </li>
+  </ul>
+  <div class="parameter" ng-show="vm.state==='1'">
+    <div class="container2" ng-if="vm.configuration">
+      <div class="row">
+        <div class="span5">
+          <h2 class="tit webfont">配置</h2>
+        </div>
+        <div class="span15">
+          <div class="row">
+            <div class="span5" ng-repeat="item in vm.configuration track by $index">
+              <div class="context">
+                <div ng-repeat="item2 in item track by $index">
+                  {{item2}}
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+    <div class="container2" ng-if="vm.weightSize">
+      <div class="row">
+        <div class="span5">
+          <h2 class="tit webfont">重量与尺寸</h2>
+        </div>
+        <div class="span15">
+          <div class="row">
+            <div class="context" ng-if="vm.weightSize.length<2" ng-repeat="item in vm.weightSize track by $index">
+              <div ng-repeat="item2 in item track by $index">
+                {{item2}}
+              </div>
+            </div>
+            <div class="span5" ng-if="vm.weightSize.length>=2" ng-repeat="item in vm.weightSize track by $index">
+              <div class="context">
+                <div ng-repeat="item2 in item track by $index">
+                  {{item2}}
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+    <div class="container2" ng-if="vm.system">
+      <div class="row">
+        <div class="span5">
+          <h2 class="tit webfont">操作系统</h2>
+        </div>
+        <div class="span15" ng-if="vm.system.length<2" ng-repeat="item in vm.system track by $index">
+          <div class="context" ng-repeat="item2 in item track by $index">
+            {{item2}}
+          </div>
+        </div>
+        <div class="span5" ng-if="vm.system.length>=2" ng-repeat="item in vm.system track by $index">
+          <div class="context">
+            <div ng-repeat="item2 in item track by $index">
+              {{item2}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container2" ng-if="vm.packingList">
+      <div class="row">
+        <div class="span5">
+          <h2 class="tit webfont">包装清单</h2>
+        </div>
+        <div class="span15">
+          <div class="row">
+            <div class="context" ng-repeat="item in vm.packingList track by $index">
+              <div ng-repeat="item2 in item track by $index">
+                {{item2}}
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="parameter" style="min-height:200px" ng-show="vm.state==2">
+    <div class="container3" ng-repeat="item in vm.comment track by $index">
+      <div class="row">
+        <div class="span5">
+          <div><img style="width:50px;height:50px;border-radius: 50%;" ng-src="{{item.userInfo.userImg}}">&nbsp;&nbsp;&nbsp;&nbsp;{{item.userName}}</div>
+        </div>
+        <div class="span15">
+           <p starshow rating-value="item.commentSource" max="max" readonly="true"></p> 
+           <p>{{item.commentCon}}</p>
+           <p style="padding:20 0 0 0;"><img style="width:100px;height:auto;" ng-src="{{item.commentImg1}}"></p>
+           <p style="padding:0 0 20px 0;">{{item.commentImg2.productName}}&nbsp;&nbsp;{{item.commentImg2.ver1}}&nbsp;&nbsp;{{item.commentImg2.ver2}}&nbsp;&nbsp;{{item.commentImg2.color}}&nbsp;&nbsp;{{item.commentImg2.productPrice}}元&nbsp;&nbsp;{{item.commentTime | limitTo:16}}</p>
+           <p style="border-top:1px solid #f0f0f0;padding:20px 0 0 0;" ng-show="item.systemComment">商家回复：{{item.systemComment}}</p>
+        </div>
+      </div>
+    </div>
+    <div ng-show="vm.comLen<=0" class="noRecord text-center">暂无商品评价</div>
+  </div>
+</div>

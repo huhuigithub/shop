@@ -1,0 +1,215 @@
+<div class="person">
+  <div class="col-sm-12 nopadding">
+    <ul class="breadcrumb">
+      <li><a ui-sref="home">主页</a></li>
+      <li>个人信息</li>
+    </ul>
+    <!-- <div class="col-sm-2 nopadding">
+      <nav class="navbar" style="background-color:#f0f0f0;color:#222;min-height:450px">
+        <ul class="nav nav-stacked" style="color:#fff">
+          <li class="text-left"><a class="nav_li" ui-sref="personContent"><i
+            class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;个人信息</a>
+          </li>
+          <li class="text-left"><a class="nav_li" ui-sref="addressContent"><i
+            class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;收货地址</a>
+          </li>
+          <li class="text-left"><a class="nav_li" ui-sref="orderContent"><i
+            class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;我的订单</a>
+          </li>
+        </ul>
+      </nav>
+    </div> -->
+    <div class="nopadding personlist">
+      <div class="table-responsive">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">收货地址</h3>
+          </div>
+          <div class="panel-body">
+            <!-- <div class="addresslist col-sm-9" ng-repeat="item in vm.addressList">
+              <div>
+                <h5>{{item.consignee}}{{item.area.province}}</h5>
+                <div class="delete" ng-click="vm.addDelete(item.id)"><i class="fa fa-times" aria-hidden="true"></i></div>
+              </div>
+              <div>
+                <div class="col-sm-12">
+                  <span class="col-sm-4 control-label">收货人</span>
+                  <label class="col-sm-8">{{item.consignee}}</label>
+                </div>
+                <div class="col-sm-12">
+                  <span class="col-sm-4 control-label">所在地区</span>
+                  <label class="col-sm-8">{{item.area.province}}{{item.area.city}}{{item.area.district}}</label>
+                </div>
+                <div class="col-sm-12">
+                  <span class="col-sm-4 control-label">详细地址</span>
+                  <label class="col-sm-8">{{item.detailedAdd}}</label>
+                </div>
+                <div class="col-sm-12">
+                  <span class="col-sm-4 control-label">手机</span>
+                  <label class="col-sm-8">{{item.phone}}</label>
+                </div>
+                <div class="col-sm-12">
+                  <div><a href="">设为默认</a><a href="" ng-click="vm.addUpdate(item.id)">编辑</a></div>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </div> -->
+            <ul class="address">
+              <li ng-class="{'default':item.select==='1'}" ng-repeat = "item in vm.addressList">
+                <div class="address_con">
+                  <div>{{item.consignee}}-{{item.area.province}}</div>
+                  <div>收货人：{{item.consignee}}</div>
+                  <div>地区：{{item.area.province}}{{item.area.city}}{{item.area.district}}</div>
+                  <div>收货地址：{{item.detailedAdd}}</div>
+                  <div>电话：{{item.phone}}</div>
+                </div>
+                <div class="address_opt">
+                  <a href="" ng-if="item.default!=='1'" ng-click="vm.addDefault(item)" class="text-r">设为默认</a>
+                  <span class="default_text" ng-if="item.default==='1'">默认地址</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="" class="text-g" data-toggle="modal" data-target="#myModal" ng-click="vm.addUpdate(item.id)">编辑</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="" ng-if="item.select!=='1'" class="text-b" ng-click="vm.addSelect(item)">选中收货地址</a>
+                  <span class="select_text" ng-if="item.select==='1'">收货地址</span>
+                  <a href="" class="text-r" ng-click="vm.addDelete(item.id)">删除</a>
+                </div>
+
+              </li>
+            </ul>
+            <!-- 地址编辑添加 -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <form class="form-horizontal" name="form" role="form">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                      </button>
+                      <h4 class="modal-title" id="myModalLabel">
+                        添加收货地址
+                      </h4>
+                    </div>
+                    <div class="modal-body">
+                      <div class="form-group col-sm-12">
+                        <label for="tvType" class="col-sm-3 control-label">*收货人：</label>
+                        <div class="col-sm-8">
+                          <input class="form-control" type="text" name="" ng-model="vm.personName">
+                        </div>
+                      </div>
+                      <div class="form-group col-sm-12">
+                        <label for="tvType" class="col-sm-3 control-label">*所在地区：</label>
+                        <div class="col-sm-3">
+                          <select class="form-control" required="" ng-model="vm.address.province" ng-options="key as key for (key,value) in vm.countryData" > 
+                            <option value="">省</option>  
+                          </select>
+                        </div>
+                        <div class="col-sm-3">
+                          <select class="form-control" required="" ng-model="vm.address.city" ng-options="key as key for (key,value) in vm.countryData[vm.address.province]"> 
+                            <option value="">市</option>  
+                          </select> 
+                        </div>
+                        <div class="col-sm-3">
+                          <select class="form-control" required="" ng-change="vm.areaSelect()" ng-model="vm.address.district" ng-options="value as value for value in vm.countryData[vm.address.province][vm.address.city]"> 
+                            <option value="">县</option>  
+                          </select> 
+                        </div>
+                      </div>
+                      <div class="form-group col-sm-12">
+                        <label for="tvType" class="col-sm-3 control-label">*详细地址：</label>
+                        <div class="col-sm-8">
+                          <input class="form-control" maxlength="60" type="text" name="" ng-model="vm.detailedAdd">
+                        </div>
+                      </div>
+                      <div class="form-group col-sm-12" ng-class="{'has-error': form.mobile.$invalid && form.mobile.$dirty || vm.phoneType}">
+                        <label for="tvType" class="col-sm-3 control-label">*手机号码：</label>
+                        <div class="col-sm-8">
+                          <input type="text" class="form-control" placeholder="请输入手机" name="mobile" ng-model="vm.personPhone" ng-pattern="/^1[34578]\d{9}$/" required>
+                          <div class="help-block" ng-if="form.mobile.$invalid && form.mobile.$dirty" ng-messages="form.mobile.$error">
+                            <p class="help-block" ng-message="required">手机必填</p>
+                            <p class="help-block" ng-message="pattern">请输入有效的手机号码</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clear"></div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-success" ng-if="vm.addId" ng-click="vm.addUpdateSave()">
+                          提交更改
+                        </button>
+                        <button type="button" class="btn btn-success" ng-if="!vm.addId" ng-click="vm.addSave()">
+                          提交新增
+                        </button>
+                      </div>
+                      <div class="clear"></div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-sm-12 martop20">
+              <button ng-click="vm.addressAdd()" data-toggle="modal" data-target="#myModal">新增收货地址</button>
+            </div>
+            <!-- <div class="addressBox" ng-class="{'showbox':vm.boxType ==true,'hidebox':vm.boxType ==false}">
+              <form class="form-horizontal" name="form" role="form">
+                <div class="form-group col-sm-12">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">添加收货地址</h4>
+                  </div>
+                  <div class="closeBox" ng-click="vm.closeAddBox()"><i class="fa fa-times" aria-hidden="true"></i></div>
+                  <label for="tvType" class="col-sm-2 control-label">*收货人：</label>
+                  <div class="col-sm-8">
+                    <input class="form-control" type="text" name="" ng-model="vm.personName">
+                  </div>
+                </div>
+                <div class="form-group col-sm-12">
+                  <label for="tvType" class="col-sm-2 control-label">*所在地区：</label>
+                  <div class="col-sm-2">
+                    <select class="form-control" required="" ng-model="vm.address.province" ng-options="key as key for (key,value) in vm.countryData" > 
+                      <option value="">省</option>  
+                    </select>
+                  </div>
+                  <div class="col-sm-2">
+                    <select class="form-control" required="" ng-model="vm.address.city" ng-options="key as key for (key,value) in vm.countryData[vm.address.province]"> 
+                      <option value="">市</option>  
+                    </select> 
+                  </div>
+                  <div class="col-sm-2">
+                    <select class="form-control" required="" ng-change="vm.addSelect()" ng-model="vm.address.district" ng-options="value as value for value in vm.countryData[vm.address.province][vm.address.city]"> 
+                      <option value="">县</option>  
+                    </select> 
+                  </div>
+                </div>
+                <div class="form-group col-sm-12">
+                  <label for="tvType" class="col-sm-2 control-label">*详细地址：</label>
+                  <div class="col-sm-8">
+                    <input class="form-control" maxlength="60" type="text" name="" ng-model="vm.detailedAdd">
+                  </div>
+                </div>
+                <div class="form-group col-sm-12" ng-class="{'has-error': form.mobile.$invalid && form.mobile.$dirty || vm.phoneType}">
+                  <label for="tvType" class="col-sm-2 control-label">*手机号码：</label>
+                  <div class="col-sm-8">
+                    <input type="text" class="form-control" placeholder="请输入手机" name="mobile" ng-model="vm.personPhone" ng-pattern="/^1[34578]\d{9}$/" required>
+                    <div class="help-block" ng-if="form.mobile.$invalid && form.mobile.$dirty" ng-messages="form.mobile.$error">
+                      <p class="help-block" ng-message="required">手机必填</p>
+                      <p class="help-block" ng-message="pattern">请输入有效的手机号码</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group col-sm-12">
+                  <div class="col-sm-2"></div>
+                  <div class="col-sm-2">
+                    <a ng-if="!vm.addId" ng-click="vm.addSave()">保存收货地址</a>
+                    <a ng-if="vm.addId" ng-click="vm.addUpdateSave()">保存收货地址</a>
+                  </div>
+                </div>
+              </form>
+            </div> -->
+            <!-- <div class="col-sm-12">
+              <button ng-click="vm.addressAdd()">新增收货地址</button>
+            </div> -->
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+    
+</div>

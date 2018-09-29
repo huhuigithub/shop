@@ -1,0 +1,204 @@
+.login {
+  /* 登录提示框 */
+  /* 登录等待 */
+  /* 登录页面框 */
+}
+.login .mar0-pad0 {
+  margin: 0;
+  padding: 0;
+}
+.login .top_bottom_left_right {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.login .marginbottom15px {
+  margin-bottom: 15px;
+}
+.login a,
+.login a:hover {
+  color: #757575;
+}
+.login .topbar {
+  padding: 30px 50px;
+  border-bottom: 2px solid #f0f0f0;
+}
+.login .logo {
+  display: inline-block;
+  padding: 0 10px;
+  background-color: #F10000;
+  width: auto;
+  height: 55px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
+  color: #fff;
+}
+.login .title {
+  padding: 10px;
+  font-size: 18px;
+}
+.login .login-error {
+  z-index: 200;
+  position: absolute;
+  right: 18%;
+  width: 320px;
+  height: 80px;
+  color: #fff;
+  font-size: 15px;
+  background-color: #c80000;
+}
+.login .login-error p {
+  width: 100%;
+  text-align: center;
+  line-height: 80px;
+}
+.login .login-error p i {
+  vertical-align: text-bottom;
+}
+.login .lgoin-wait {
+  z-index: 1000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.login .lgoin-wait p {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 50px;
+  font-size: 20px;
+  line-height: 100%;
+  text-align: center;
+}
+.login .h_panel,
+.login .login_banner {
+  width: 1130px;
+  margin: 0 auto;
+}
+.login .h_logo {
+  width: 200px;
+  height: 98px;
+}
+.login .login_banner_panel {
+  background: #14212B;
+  width: 100%;
+  min-height: 588px;
+  position: absolute;
+  left: 0;
+  top: 98px;
+}
+.login .login_banner {
+  height: 588px;
+  position: relative;
+}
+.login .wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 480px;
+  background: url(http://olau2z5k7.bkt.clouddn.com/%E7%AE%A1%E7%90%86%E5%91%98%E7%99%BB%E5%BD%95.jpg) center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  box-align: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  box-pack: center;
+}
+.login .wrap_box {
+  z-index: -100;
+  position: absolute;
+  width: 100%;
+  height: 588px;
+}
+.login .layout_panel {
+  clear: both;
+  background: transparent;
+}
+.login .layout_panel,
+.login .h_panel,
+.login .login_banner {
+  width: 1130px;
+  margin: 0 auto;
+}
+.login .layout {
+  font-size: 14px;
+  background-color: #fcfcfc;
+  margin: 0 auto;
+  position: relative;
+  min-height: 380px;
+  width: 400px;
+  margin-bottom: 0;
+  margin-top: 50px;
+  margin-right: 0;
+  box-shadow: 0 0 5px 2px #ccc;
+}
+.login .nav_tabs {
+  padding: 27px 0 24px;
+  text-align: center;
+  font-size: 24px;
+  color: #f10000;
+}
+.login .login_area {
+  width: 338px;
+  padding-bottom: 0;
+  margin: 0 auto;
+}
+.login .form-control {
+  display: block;
+  width: 100%;
+  height: 48px;
+  border-radius: 0;
+  line-height: 48px;
+  padding: 0 20px;
+  border: 1px solid #e0e0e0;
+  box-shadow: none;
+}
+.login .btnadpt,
+.login .btnadpt:hover {
+  width: 100%;
+  height: 50px;
+  display: block;
+  margin-bottom: 14px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #f10000;
+  border-radius: 0;
+}
+.login .n-footer {
+  background: #fff;
+  margin-top: 20px;
+  position: relative;
+  height: auto;
+  text-align: center;
+}
+.login .nf-link-area {
+  text-align: center;
+}
+.login .nf-link-area li {
+  display: inline-block;
+}
+.login ul,
+.login li {
+  list-style: none;
+}
+.login .nf-link-area a:hover,
+.login .nf-link-area a.current {
+  color: #333;
+}
+.login .nf-link-area a {
+  display: inline-block;
+  padding: 0 10px;
+  color: #757575;
+}

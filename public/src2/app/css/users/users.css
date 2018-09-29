@@ -1,0 +1,13 @@
+.users {
+  font-size: 14px;
+}
+.users .breadcrumb {
+  background-color: #fff;
+}
+.users .well {
+  background-color: #fff;
+}
+.users .title {
+  padding: 10px;
+  font-size: 18px;
+}

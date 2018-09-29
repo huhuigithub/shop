@@ -1,0 +1,10 @@
+.check .title {
+  padding: 10px;
+  font-size: 18px;
+}
+.check .content {
+  min-height: 600px;
+  border-top: solid 2px #aaa;
+  border-bottom: solid 3px #aaa;
+  padding: 10px;
+}

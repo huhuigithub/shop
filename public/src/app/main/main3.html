@@ -1,0 +1,31 @@
+<div>
+  <topbar></topbar>
+  <header2></header2>
+</div>
+<div class="main3" style="padding:0;">
+  <div>
+    <div class="col-sm-2">
+      <nav class="navbar" style="background-color:#f0f0f0;color:#222;min-height:450px">
+        <ul class="nav nav-stacked" style="color:#fff">
+          <li class="text-left"><a class="nav_li" ui-sref="personContent"><i
+            class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;个人信息</a>
+          </li>
+          <li class="text-left"><a class="nav_li" ui-sref="addressContent"><i
+            class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;收货地址</a>
+          </li>
+          <li class="text-left"><a class="nav_li" ui-sref="orderContent"><i
+            class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;我的订单</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div  ui-view class="col-md-10" style="background-color:#fff;min-height:450px;padding:0;"></div>
+    <div class="clear"></div>
+  </div>
+  <footer class="text-center">
+    <div style="font-size:14px;top:20px;">
+     Copyright © 2017 网上商城 版本v0.0.1
+     毕业设计：胡辉
+    </div>
+  </footer>
+</div>

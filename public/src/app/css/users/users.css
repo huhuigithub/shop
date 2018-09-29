@@ -1,0 +1,67 @@
+.users .home-hero-container {
+  position: relative;
+  z-index: 10;
+}
+.users .container {
+  width: 1226px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.users .nopadding {
+  padding: 0 !important;
+}
+.users ul,
+.users ol {
+  padding: 0;
+}
+.users .banner {
+  position: relative;
+  overflow: auto;
+  text-align: center;
+}
+.users .banner li {
+  list-style: none;
+}
+.users .banner ul li {
+  float: left;
+}
+.users #b04 {
+  width: 640px;
+}
+.users #b04 .dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+}
+.users #b04 .dots li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  text-indent: -999em;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: .4;
+  -webkit-transition: background .5s, opacity .5s;
+  -moz-transition: background .5s, opacity .5s;
+  transition: background .5s, opacity .5s;
+}
+.users #b04 .dots li.active {
+  background: #fff;
+  opacity: 1;
+}
+.users #b04 .arrow {
+  position: absolute;
+  top: 200px;
+}
+.users #b04 #al {
+  left: 15px;
+}
+.users #b04 #ar {
+  right: 15px;
+}
+.users .unslider-arrow04:hover {
+  background-color: rgba(71, 73, 75, 0.5);
+}

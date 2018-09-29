@@ -1,0 +1,132 @@
+<!doctype html>
+<html ng-app="mishop">
+  <head>
+    <meta charset="utf-8">
+    <title>我的商城</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="../bower_components/angular-toastr/dist/angular-toastr.css" />
+    <link rel="stylesheet" href="../bower_components/animate.css/animate.css"/>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bower_components/angular-busy/dist/angular-busy.min.css">
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../bower_components/sweetalert/dist/sweetalert.css">
+
+    <!-- we -->
+    <link rel="stylesheet" href="../bower_components/Nivo-Slider-jQuery/nivo-slider.css"/>
+    <link rel="stylesheet" href="../bower_components/Nivo-Slider-jQuery/themes/default/default.css"/>
+    <link rel="stylesheet" href="app/css/index.css">
+    <link rel="stylesheet" href="app/css/login/login.css">    
+    <link rel="stylesheet" href="app/css/components/header/header.css">
+    <link rel="stylesheet" href="app/css/components/header/topbar.css">
+    <link rel="stylesheet" href="app/css/components/navbar/navbar.css">
+    <link rel="stylesheet" href="app/css/main/main.css">
+    <link rel="stylesheet" href="app/css/person/person.css">
+    <link rel="stylesheet" href="app/css/index/index.css">
+    <link rel="stylesheet" href="app/css/list/list.css">
+    <link rel="stylesheet" href="app/css/cart/cart.css">
+    <link rel="stylesheet" href="app/css/buy/buy.css">
+
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div ui-view></div>
+
+
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="../bower_components/angular-touch/angular-touch.min.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!-- <script src="../bower_components/less/dist/less.min.js"></script> -->
+    <script src="../bower_components/malarkey/dist/malarkey.min.js"></script>
+    <script src="../bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="../bower_components/moment/moment.js"></script>
+    <script src="../bower_components/angular-busy/dist/angular-busy.min.js"></script>
+    <script src="../bower_components/ngSweetAlert/SweetAlert.min.js"></script>
+    <script src="../bower_components/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../bower_components/angular-smart-table/dist/smart-table.min.js"></script>
+
+    <script src="app/js/unslider.min.js"></script>
+    <script src="../bower_components/Nivo-Slider-jQuery/jquery.nivo.slider.js"></script>
+    <script src="../bower_components/checklist-model/checklist-model.js"></script>
+
+
+
+    <script src="app/index.module.js"></script>
+    <script src="app/components/webDevTec/webDevTec.service.js"></script>
+    <script src="app/components/navbar/navbar.directive.js"></script>
+    <script src="app/components/malarkey/malarkey.directive.js"></script>
+    <script src="app/components/githubContributor/githubContributor.service.js"></script>
+    <script src="app/components/header/header.directive.js"></script>
+
+    <script src="app/main/main.controller.js"></script>
+    <script src="app/main/main2.controller.js"></script>
+    <script src="app/main/main3.controller.js"></script>
+    <script src="app/login/login.controller.js"></script>
+    <script src="app/login/register.controller.js"></script>
+    <script src="app/index.run.js"></script>
+    <script src="app/index.route.js"></script>
+    <script src="app/index.constants.js"></script>
+    <script src="app/index.config.js"></script>
+    <script src="app/index.service.js"></script>
+
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/underscore/underscore-min.js"></script>
+    <script src="../bower_components/plupload/js/plupload.full.min.js"></script>
+
+    <!-- 新闻资讯 end
+
+    <!-- 商城主页模块 -->
+    <script src="app/index/js/pageSelect.directive.js"></script>
+    <script src="app/index/index.router.js"></script>
+    <script src="app/index/index.controller.js"></script>
+    <!-- 商城主页模块 -->
+
+    <!-- 个人信息模块 -->
+    <script src="app/person/person.router.js"></script>
+    <script src="app/person/person.controller.js"></script>
+    <script src="app/person/updatePerson.controller.js"></script>
+    <script src="app/person/address.controller.js"></script>
+    <script src="app/person/order.controller.js"></script>
+    <script src="app/person/orderInfo.controller.js"></script>
+    <script src="app/person/comment.controller.js"></script>
+    <!-- 个人信息模块 -->
+
+    <!-- 全部商品分类模块 -->
+    <script src="app/list/list.router.js"></script>
+    <script src="app/list/list.controller.js"></script>
+    <script src="app/list/search.controller.js"></script>
+    <!-- 全部商品分类模块 -->
+
+    <!-- 购物车模块 -->
+    <script src="app/cart/cart.router.js"></script>
+    <script src="app/cart/cart.controller.js"></script>
+    <script src="app/cart/getOrderInfo.controller.js"></script>
+    <!-- 购物车模块 -->
+
+    <!-- 商品购买模块 -->
+    <script src="app/buy/buy.router.js"></script>
+    <script src="app/buy/buyphone.controller.js"></script>
+    <script src="app/buy/buypad.controller.js"></script>
+    <script src="app/buy/buymouse.controller.js"></script>
+    <script src="app/buy/buybookair.controller.js"></script>
+    <script src="app/buy/buytv.controller.js"></script>
+    <script src="app/buy/buyIcebox.controller.js"></script>
+    <!-- 商品购买模块 -->
+
+    
+
+  </body>
+</html>

@@ -1,0 +1,10 @@
+.suggestion .title {
+  padding: 10px;
+  font-size: 18px;
+}
+.suggestion .content {
+  min-height: 600px;
+  border-top: solid 2px #aaa;
+  border-bottom: solid 3px #aaa;
+  padding: 10px;
+}

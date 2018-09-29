@@ -1,0 +1,81 @@
+.product table th,
+.product td {
+  text-align: center;
+}
+.product .clear {
+  clear: both;
+}
+.product .floatright {
+  float: right;
+}
+.product .none-padding {
+  padding: 0 !important;
+}
+.product .addactivity {
+  float: right;
+  margin-top: 10px;
+}
+.product .right15px {
+  right: 15px;
+}
+.product .marginTop10px {
+  margin-top: 10px;
+}
+.product .marginBottom20px {
+  margin-bottom: 20px;
+}
+.product .marginBottom50px {
+  margin-bottom: 50px;
+}
+.product .marginTop20px {
+  margin-top: 20px;
+}
+.product .padLeft8px {
+  padding-left: 8px;
+}
+.product table tr td {
+  vertical-align: middle;
+}
+.product .breadcrumb {
+  display: block;
+  background-color: #fff;
+  padding: 8px 0;
+  margin-bottom: 0;
+  position: relative;
+  float: right;
+}
+.product .well {
+  background-color: #fff !important;
+  min-height: 300px;
+  width: 98%;
+}
+.product .title {
+  padding: 10px;
+  font-size: 18px;
+}
+.product .file {
+  position: relative;
+  display: inline-block;
+  background: #D0EEFF;
+  border: 1px solid #99D3F5;
+  border-radius: 4px;
+  padding: 4px 12px;
+  overflow: hidden;
+  color: #1E88C7;
+  text-decoration: none;
+  text-indent: 0;
+  line-height: 20px;
+}
+.product .file input {
+  position: absolute;
+  font-size: 100px;
+  right: 0;
+  top: 0;
+  opacity: 0;
+}
+.product .file:hover {
+  background: #AADFFD;
+  border-color: #78C3F3;
+  color: #004974;
+  text-decoration: none;
+}

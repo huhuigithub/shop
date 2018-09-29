@@ -1,0 +1,22 @@
+<div class="site-topbar">
+  <div class="container">
+    <div class="topbar-nav">
+      <a ui-sref="indexContent"><b>Hu</b>&nbsp;我的商城</a>
+    </div>
+    <div class="topbar-cart">
+      <a ui-sref="cartContent" class="cart-mini"><i class="fa fa-cart-plus"></i>&nbsp;&nbsp;购物车</a>
+    </div>
+    <div class="topbar-info">
+      <a ui-sref="personContent"><i class="fa fa-user"></i>&nbsp;&nbsp;个人信息</a>
+      <a ui-sref="orderContent"><i></i>&nbsp;&nbsp;我的订单</a>
+    </div>
+    <div class="topbar-exit">
+      <a ng-show="!vm.loginType" href="" ng-click="vm.signOut()"><i class="glyphicon glyphicon-log-out"></i>&nbsp;&nbsp;退出登录</a>
+    </div>
+    <div ng-show="vm.loginType" class="login-sign">
+      <a ui-sref="register">注册</a>
+      <a ui-sref="login">登录</a>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>

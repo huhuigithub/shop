@@ -1,0 +1,89 @@
+<div class="order col-sm-12">
+  <div class="breadcrumbs">
+    <div class="">
+      <a ui-sref="mi_indexContent">首页</a>
+      <span>></span>
+      <a href="javascript:void(0)">交易订单</a>
+    </div>
+    <br>
+    <div class="orderInfo col-sm-12">
+      <ul class="nav nav-pills" role="tablist">
+      <li role="presentation" class="active" ng-click="vm.searchOrder()">
+        <a href="" role="tab" data-toggle="tab">全部订单</a>
+      </li>
+      <li role="presentation" ng-click="vm.searchOrderByState('0')">
+        <a href="" role="tab" data-toggle="tab">待发货</a>
+      </li>
+      <li role="presentation" ng-click="vm.searchOrderByState('1')">
+        <a href="" role="tab" data-toggle="tab">待收货</a>
+      </li>
+      <li role="presentation" ng-click="vm.searchOrderByState('2')">
+        <a href="" role="tab" data-toggle="tab">待评价</a>
+      </li>
+      <li role="presentation" ng-click="vm.searchOrderByState('3')">
+        <a href="" role="tab" data-toggle="tab">已完成</a>
+      </li>
+      <li role="presentation" ng-click="vm.searchOrderByState('-1')">
+        <a href="" role="tab" data-toggle="tab">已取消</a>
+      </li>
+      <li role="presentation" ng-click="vm.searchOrderByState('-2')">
+        <a href="" role="tab" data-toggle="tab">已删除</a>
+      </li>
+    </ul>
+    <br>
+    <div class="clear"></div>
+    <div class="orderCon">
+      <table class="table" st-table="displayedCollection" st-safe-src="vm.order" cg-busy="{promise:vm.promise,message:'正在加载，请稍等'}">
+        <thead>
+        <tr>
+          <th colspan="6">
+            <div class="searchbox col-sm-4 none-padding">
+              <input class="form-control" st-search="orderId" placeholder="订单ID查询" class="input form-control" type="search"/>
+            </div>
+            <div class="searchbox col-sm-4 none-padding">
+              <input class="form-control" st-search="orderTime" placeholder="下单时间查询" class="input form-control" type="search"/>
+            </div>
+          </th>
+        </tr>
+          <th st-sort="orderId" style="cursor: pointer;">订单号</th>
+          <th>商品信息</th>
+          <th st-sort="orderPayType" style="cursor: pointer;">支付方式</th>
+          <th st-sort="orderTime" style="cursor: pointer;">下单时间</th>
+          <th st-sort="orderPrice" style="cursor: pointer;">金额</th>
+          <th st-sort="orderState" style="cursor: pointer;">当前状态</th>
+          <th>操作</th>
+        </thead>
+        <tr ng-repeat="item in displayedCollection">
+          <td>{{item.orderId}}</td>
+          <td class="col-sm-4">
+            <a ui-sref="orderContent.orderInfo({orderId:item.orderId})"><div ng-repeat="item2 in item.orderProductIdList">
+              {{item2.productInfo.productName}}{{item2.productInfo.productVersion.ver1}}+{{item2.productInfo.productVersion.ver2}}{{item2.productInfo.productColor.color}}&nbsp;&nbsp;&nbsp;&nbsp;数量:{{item2.num}}，货号:{{item2.productId}}
+            </div></a>
+          </td>
+          <td>{{item.orderPayType}}</td>
+          <td>{{item.orderTime}}</td>
+          <td>{{item.orderPrice}} 元</td>
+          <td>
+            <span ng-if="item.orderState==='-2'">已删除</span>
+            <span ng-if="item.orderState==='-1'">已取消</span>
+            <span ng-if="item.orderState==='0'">待发货</span>
+            <span ng-if="item.orderState==='1'">待收货</span>
+            <span ng-if="item.orderState==='2'">待评价</span>
+            <span ng-if="item.orderState==='3'">已完成</span>
+          </td>
+          <td>
+            <span class="btn btn-sm" ng-if="item.orderState==='-1'">已取消</span>
+            <button class="btn btn-sm btn-success" ng-if="item.orderState==='0'" ng-click="vm.shipmentOrder(item.orderId)">发货</button>
+            <span class="btn btn-sm" ng-if="item.orderState==='1'">已发货</span>
+            <span class="btn btn-sm" ng-if="item.orderState==='2'">待评价</span>
+            <!-- <button class="btn btn-sm btn-success" ng-if="item.orderState==='2'" ng-click="vm.shipmentOrder(item.orderId)">默认评价</button> -->
+            <span class="btn btn-sm" ng-if="item.orderState==='3'">已完成</span>
+            <span class="btn btn-sm" ng-if="item.orderState==='-2'">已删除</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div ng-show="!vm.order" class="noRecord text-center">暂无此状态订单</div>
+    </div>
+  </div>
+</div>

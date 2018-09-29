@@ -1,0 +1,104 @@
+<div class="person">
+  <div class="col-sm-12 nopadding">
+    <ul class="breadcrumb">
+      <li><a ui-sref="home">主页</a></li>
+      <li>我的订单</li>
+    </ul>
+    <ul class="nav nav-pills" role="tablist">
+      <li role="presentation" class="active" ng-click="vm.searchOrder()">
+        <a href="" role="tab" data-toggle="tab">全部订单</a>
+      </li>
+      <li role="presentation" ng-click="vm.searchOrderByState('0')">
+        <a href="" role="tab" data-toggle="tab">待发货</a>
+      </li>
+      <li role="presentation" ng-click="vm.searchOrderByState('1')">
+        <a href="" role="tab" data-toggle="tab">待收货</a>
+      </li>
+      <li role="presentation" ng-click="vm.searchOrderByState('2')">
+        <a href="" role="tab" data-toggle="tab">待评价</a>
+      </li>
+      <li role="presentation" ng-click="vm.searchOrderByState('3')">
+        <a href="" role="tab" data-toggle="tab">已完成</a>
+      </li>
+      <li role="presentation" ng-click="vm.searchOrderByState('-1')">
+        <a href="" role="tab" data-toggle="tab">已取消</a>
+      </li>
+      <li role="presentation" ng-click="vm.searchOrderByState('-2')">
+        <a href="" role="tab" data-toggle="tab">已删除</a>
+      </li>
+    </ul>
+    <!-- <ul class="nav navbar-nav">
+      <li class="active"><a href="">全部订单</a></li>
+      <li><a href="">待发货</a></li>
+      <li><a href="">待收货</a></li>
+      <li><a href="">待评价</a></li>
+    </ul> -->
+    <div class="clear"></div>
+    <div class="order">
+      <div class="product_list">
+        <div class="product_info">
+          <div class="orderlist" ng-repeat="item in vm.order">
+            <div class="ordertitle">
+              <span>{{item.orderTime | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+              <span>订单号：{{item.orderId}}</span>
+              <span>{{item.orderConsignee}}</span>
+              <span>{{item.orderPayType}}</span>
+              <span>订单状态：
+                <label class="text-o" ng-if="item.orderState==='-2'">已删除</label>
+                <label class="text-o" ng-if="item.orderState==='-1'">已取消</label>
+                <label class="text-o" ng-if="item.orderState==='0'">待发货</label>
+                <label class="text-o" ng-if="item.orderState==='1'">待收货</label>
+                <label class="text-o" ng-if="item.orderState==='2'">待评价</label>
+                <label class="text-o" ng-if="item.orderState==='3'">已完成</label>
+              </span>
+            </div>
+            <div class="ordercon">
+              <ul class="product col-sm-8">
+                <li colspan="8" ng-repeat="item2 in item.orderProductIdList">
+                  <div class="col-sm-4">
+                    <a ng-if="item2.productInfo.productType==='手机'" ui-sref="buyphoneContent({kindId : item2.productInfo.kindId})" class="category-list-img">
+                      <img style="width:auto;height:60px;" ng-src="{{item2.productInfo.productImg}}">
+                    </a>
+                    <a ng-if="item2.productInfo.productType==='笔记本'" ui-sref="buybookairContent({kindId : item.kindId})" class="category-list-img">
+                      <img style="width:auto;height:60px;" ng-src="{{item2.productInfo.productImg}}">
+                    </a>
+                    <a ng-if="item2.productInfo.productType==='平板'" ui-sref="buypadContent({kindId : item2.productInfo.kindId})" class="category-list-img">
+                      <img style="width:auto;height:60px;" ng-src="{{item2.productInfo.productImg}}">
+                    </a>
+                    <a ng-if="item2.productInfo.productType==='电视'" ui-sref="buytvContent({kindId : item2.productInfo.kindId})" class="category-list-img">
+                      <img style="width:auto;height:60px;" ng-src="{{item2.productInfo.productImg}}">
+                    </a>
+                    <a ng-if="item2.productInfo.productType==='鼠标'" ui-sref="buymouseContent({kindId : item2.productInfo.kindId})" class="category-list-img">
+                      <img style="width:auto;height:60px;" ng-src="{{item2.productInfo.productImg}}">
+                    </a>
+                    <a ng-if="item2.productInfo.productType==='冰箱'" ui-sref="buyIceboxContent({kindId : item2.productInfo.kindId})" class="category-list-img">
+                      <img style="width:auto;height:60px;" ng-src="{{item2.productInfo.productImg}}">
+                    </a>
+                  </div>
+                  <div class="col-sm-4 proInfo">
+                    <div>{{item2.productInfo.productName}}</div>
+                    <div>{{item2.productInfo.productVersion.ver1}}+{{item2.productInfo.productVersion.ver2}}{{item2.productInfo.productColor.color}}</div>
+                  </div>
+                  <div class="col-sm-4">
+                    <button ng-if="item.orderState==='2' && item2.commentState!='1'" class="btn btn-warning btn-sm" ui-sref="orderContent.comment({orderId:item.orderId,productId:item2.productId})">订单评价</button>
+                    <label ng-if="item2.commentState=='1'">已评价</label>
+                  </div>
+                  <div class="clear"></div>
+                </li>
+              </ul>
+            </div>
+            <div class="">
+              <button ng-if="item.orderState==='-1'||item.orderState==='3'" class="btn btn-danger btn-sm" ng-click="vm.changeOrder(item.orderId,'-2')" href="">删除订单</button>
+              <!-- <button class="btn btn-danger btn-sm" ng-click="vm.deleteOrder(item.orderId,'-2')" href="">删除所有订单</button> -->
+              <button ng-if="item.orderState==='0'" class="btn btn-danger btn-sm" ng-click="vm.changeOrder(item.orderId,'-1')" href="">取消订单</button>
+              <button ng-if="item.orderState==='1'" class="btn btn-danger btn-sm" ng-click="vm.changeOrder(item.orderId,'2')" href="">确认收货</button>
+              <button class="btn btn-warning btn-sm" ui-sref="orderContent.orderInfo({orderId:item.orderId})">订单详情</button>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-show="!vm.order" class="noRecord text-center">暂无此状态订单</div>
+  </div>  
+</div>

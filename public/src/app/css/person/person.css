@@ -1,0 +1,220 @@
+ul li {
+  list-style-type: none;
+}
+ul li div {
+  vertical-align: middle;
+}
+.person {
+  font-size: 14px;
+  width: 100%;
+  background-color: #fff;
+}
+.person .clear {
+  clear: both;
+}
+.person .breadcrumb {
+  background-color: #fff;
+  padding: 8px 0;
+}
+.person .well {
+  background-color: #fff;
+  min-height: 300px;
+}
+.person .title {
+  padding: 10px;
+  font-size: 18px;
+}
+.person .personInfo {
+  padding: 20px 40px;
+}
+.person .personInfo .info_title {
+  font-size: 18px;
+  color: #f10000;
+  padding: 10px 0;
+}
+.person .personInfo .info_con {
+  padding: 20px 0;
+}
+.person .addressBox {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  width: 760px;
+  height: 400px;
+  padding: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: #fff;
+  border: 1px solid #cacaca;
+}
+.person .addresslist {
+  border: 1px solid #f0f0f0;
+  padding: 20px 10px;
+  margin: 20px 30px;
+}
+.person ul {
+  margin: 0 20px;
+  padding: 0;
+}
+.person ul li {
+  list-style-type: none;
+}
+.person ul li div {
+  vertical-align: middle;
+}
+.person .address li {
+  position: relative;
+  width: 420px;
+  height: 280px;
+  list-style-type: none;
+  line-height: 30px;
+  margin: 20px 12px 0 12px;
+  padding: 20px;
+  float: left;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.person .default {
+  border: 1px solid #f00000!important;
+  box-sizing: border-box;
+}
+.person .default_text {
+  color: #fff;
+  background-color: #ccc;
+  padding: 5px;
+}
+.person .select_text {
+  color: #fff;
+  background-color: #f00000;
+  padding: 5px;
+}
+.person .address_opt {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.person .martop20 {
+  margin-top: 20px;
+}
+.person .order {
+  background-color: #fff;
+  min-height: 200px;
+}
+.person .order .orderlist {
+  border: 2px solid #f0f0f0;
+  margin: 20px;
+}
+.person .order .ordertitle {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.person .order .ordertitle span {
+  padding: 0 10px;
+  border-right: 1px solid #d0d0d0;
+}
+.person .order .ordertitle span:last-child {
+  border-right: 0;
+}
+.person .order .product {
+  padding: 10px 0;
+  border-right: 1px solid #f0f0f0;
+}
+.person .order .product li {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.person .order .product li:last-child {
+  border-bottom: 0;
+}
+.person .order .proInfo {
+  font-size: 13px;
+  vertical-align: middle;
+  line-height: 30px;
+}
+.person .orderInfo .order_content {
+  width: 90%;
+  margin: 0 auto;
+}
+.person .orderInfo .title {
+  font-size: 30px;
+}
+.person .orderInfo .order_title {
+  font-size: 16px;
+  padding: 5px 0;
+}
+.person .orderInfo .progress {
+  margin: 30px 0 50px;
+}
+.person .orderInfo .order_state {
+  display: block;
+  margin: 0 auto;
+}
+.person .orderInfo .order_state li {
+  padding: 0;
+  margin: 0;
+  display: block;
+  width: 25%;
+  height: 20px;
+  float: left;
+  text-align: center;
+  line-height: 20px;
+}
+.person .orderInfo .order_state .active {
+  background-color: #00AB62;
+  color: #fff;
+}
+.person .orderInfo table tr td {
+  vertical-align: middle;
+}
+.person .consult .product_info {
+  text-align: center;
+  font-size: 12px;
+}
+.person .imgbox {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.person .imgbox img {
+  height: 100px;
+  margin: 0 auto;
+}
+a {
+  color: #333;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:focus,
+.nav-pills > li.active > a:hover {
+  color: #f10000;
+  background-color: transparent;
+}
+.file {
+  position: relative;
+  display: inline-block;
+  background: #D0EEFF;
+  border: 1px solid #99D3F5;
+  border-radius: 4px;
+  padding: 20px;
+  font-size: 40px;
+  overflow: hidden;
+  color: #1E88C7;
+  text-decoration: none;
+  text-indent: 0;
+  line-height: 20px;
+}
+.file input {
+  position: absolute;
+  font-size: 100px;
+  right: 0;
+  top: 0;
+  opacity: 0;
+}
+.file:hover {
+  background: #AADFFD;
+  border-color: #78C3F3;
+  color: #004974;
+  text-decoration: none;
+}

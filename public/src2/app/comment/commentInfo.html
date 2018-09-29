@@ -1,0 +1,61 @@
+<div class="order col-sm-12">
+  <div class="breadcrumbs">
+    <div class="">
+      <a ui-sref="mi_indexContent">首页</a>
+      <span>></span>
+      <a href="javascript:void(0)">商品评价</a>
+    </div>
+    <br>
+    <div class="orderCon">
+      <table class="table text-center" cg-busy="{promise:vm.promise,message:'正在加载，请稍等'}">
+        <thead>
+          <th>商品名称</th>
+          <th>评论信息</th>
+          <th>评论分数</th>
+          <th>评论时间</th>
+          <th>评论人</th>
+          <th>评论图片</th>
+          <th>操作</th>
+        </thead>
+        <tr ng-repeat="item in vm.comment">
+          <td colspan="7">
+            <div class="col-sm-12 form-group text-r">
+              <div style="width:14%;float:left">订单ID</div>
+              <div style="width:14%;float:left">评论信息</div>
+              <div style="width:14%;float:left">评论分数</div>
+              <div style="width:14%;float:left">评论时间</div>
+              <div style="width:14%;float:left">评论人</div>
+              <div style="width:14%;float:left">评论图片</div>
+              <div style="width:14%;float:left">操作</div>
+              <div class="clear"></div>
+            </div>
+            <div class="col-sm-12 form-group">
+              <div style="width:14%;float:left">{{item.orderId}}<span ng-if="!item.orderId">-</span></div>
+              <div style="width:14%;float:left">{{item.commentCon}}<span ng-if="!item.commentCon">-</span></div>
+              <div style="width:14%;float:left">{{item.commentSource}}<span ng-if="!item.commentSource">-</span></div>
+              <div style="width:14%;float:left">{{item.commentTime}}<span ng-if="!item.commentTime">-</span></div>
+              <div style="width:14%;float:left">{{item.userInfo.userName}}<span ng-if="!item.userInfo.userName">-</span></div>
+              <div style="width:14%;float:left"><img style="width:100px;max-height:100px;" ng-src="{{item.commentImg1}}"><span ng-if="!item.commentImg1">-</span></div>
+              <div style="width:14%;float:left">
+                <button class="btn btn-sm btn-danger" ng-click="vm.deleteComment(item.commentId)">删除评价</button>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <div>
+              <div class="col-sm-12">
+                <div class="col-sm-8">
+                  <textarea class="form-control"  id="{{item.commentId}}" placeholder="在此输入回复内容，回复后内容不可更改。" ng-disabled="item.systemComment">{{item.systemComment}}</textarea>
+                </div>
+                <div class="col-sm-4 text-left" >
+                  <a class="btn btn-success btn-sm" ng-disabled="item.systemComment"  ng-click="vm.commentReply(item.commentId)">回复</a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div ng-show="!vm.comment" class="noRecord text-center">暂无商品评价</div>
+    </div>
+  </div>
+</div>

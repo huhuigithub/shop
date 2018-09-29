@@ -1,0 +1,9 @@
+<nav ng-if="pages.length >= 2">
+  <ul class="pagination">
+    <li ng-show="pages.length >= 5"><a ng-click="selectPage(1)">首页</a></li>
+    <li><a ng-click="selectPage(currentPage - 1)">上一页</a></li>
+    <li ng-repeat="page in pages" ng-class="{active: page==currentPage}"><a href="javascript: void(0);" ng-click="selectPage(page)">{{page}}</a></li>
+    <li><a ng-click="selectPage(currentPage + 1)">下一页</a></li>
+    <li ng-show="pages.length >= 5"><a ng-click="selectPage(numPages)">尾页</a></li>
+  </ul>
+</nav>

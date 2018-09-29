@@ -1,0 +1,63 @@
+<div class="users">
+  <ul class="breadcrumb">
+    <li><a ui-sref="home">主页</a></li>
+    <li><a ui-sref="personContent">个人信息</a></li>
+    <li class="active">个人信息编辑</li>
+  </ul>
+  <div class="col-sm-12">
+    <div class="title">基本信息编辑</div>
+    <form browser-autocomplete-form class="form-horizontal" name="form" role="form">
+      <div class="row clearfix">
+        <div class="col-md-11 col-sm-11 column">
+          <div class="formbox">
+            <div class="form-group" ng-class="{'has-error': form.username.$invalid && !form.username.$pristine}">
+              <label for="firstname" class="col-sm-2 control-label">姓名</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="username" ng-model="vm.name" ng-maxlength="10" placeholder="姓名" required>
+                <div ng-if="form.username.$invalid && form.username.$dirty" ng-messages="form.username.$error">
+                  <p class="help-block" ng-message="required">姓名必填</p>
+                  <p class="help-block" ng-message="maxlength">姓名最大长度为10位</p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': form.mobile.$invalid && form.mobile.$dirty || vm.phoneType}">
+              <label for="firstname" class="col-sm-2 control-label">手机</label>
+              <div class="col-sm-10">
+                <input type="text" ng-blur="vm.phoneCheck()" ng-keyup="vm.phoneCheck()" class="form-control" placeholder="请输入手机" name="mobile" ng-model="vm.phone" ng-pattern="/^1[34578]\d{9}$/" required>
+                <div class="help-block" ng-if="form.mobile.$invalid && form.mobile.$dirty" ng-messages="form.mobile.$error">
+                  <p class="help-block" ng-message="required">手机必填</p>
+                  <p class="help-block" ng-message="pattern">请输入有效的手机号码</p>
+                </div>
+                <p style="color:#a94442" class="help-block" ng-show="vm.phoneType">该手机号码已注册</p>
+              </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': form.email.$invalid && !form.email.$pristine}">
+              <label for="email" class="col-sm-2 control-label">邮箱</label>
+              <div class="col-sm-10">
+                <input type="email" name="email" class="form-control" ng-model="vm.email" placeholder="请输入邮箱（选填）"/>
+                <div class="help-block" ng-messages="form.email.$error" ng-if="form.email.$invalid && form.email.$dirty">
+                  <p ng-message="email">邮箱格式不正确</p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="firstname" class="col-sm-2 control-label">性别</label>
+              <div class="col-sm-10">
+                <label class="checkbox-inline">
+                  <input type="radio" name="sex" id="man" ng-value="'男'" ng-model="vm.sex" ng-click="vm.sexSelect()"> 男
+                </label>
+                <label class="checkbox-inline">
+                  <input type="radio" name="sex" id="woman" ng-value="'女'" ng-model="vm.sex" ng-click="vm.sexSelect()"> 女
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="marginbottom30px col-md-8 col-sm-offset-2">
+        <button ng-disabled="form.$invalid || vm.phoneType" ng-click="vm.updateUserSubmit()" class="btn btn-success">提交</button>
+      </div>
+    </form>
+  </div>
+  
+</div>

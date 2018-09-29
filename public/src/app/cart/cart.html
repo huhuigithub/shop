@@ -1,0 +1,59 @@
+<div class="cart">
+  <div class="page-main">
+    <div class="container" ng-if="vm.cart">
+      <div class="product_list">
+        <div class="product_info">
+          <table class="table text-center" st-table="displayedCollection" st-safe-src="vm.productIdList">
+            <thead class="row">
+              <th><input type="checkbox" ng-model="vm.all" ng-value="vm.all" ng-change="vm.productSelectAll()" name="all">&nbsp;&nbsp;全选</th>
+              <th class="col-xs-4 col-sm-4 text-center" st-sort="productName">商品名称</th>
+              <th class="col-xs-1 col-sm-1 text-center" st-sort="productBrand">单价</th>
+              <th class="col-xs-2 col-sm-2 text-center" st-sort="productBrand">数量</th>
+              <th class="col-xs-2 col-sm-2 text-center" st-sort="productBrand">小计</th>
+              <th class="col-xs-2 col-sm-2 text-center" st-sort="productName">操作</th>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in displayedCollection">
+                <td><input type = "checkbox" ng-click="vm.productSelect(item.productId,item.num)" data-checklist-model = "vm.proList" checklist-value = "item" > {{item.RAMsize}}</td>
+                <td class="col-xs-4 col-sm-4">
+                  <a href="">
+                    <span class="col-sm-3"><img style="width:auto;height:80px;" ng-src="{{item.productInfo.productImg}}"></span>&nbsp;&nbsp;
+                    <span class="col-sm-9">{{item.productInfo.productName}}&nbsp;&nbsp;{{item.productInfo.productVersion.ver1}}&nbsp;&nbsp;{{item.productInfo.productVersion.ver2}}&nbsp;&nbsp;{{item.productInfo.productColor.color}}</span>
+                  </a>
+                </td>
+                <td class="col-xs-1 col-sm-1">{{item.productInfo.productPrice}}元</td>
+                <td class="col-xs-2 col-sm-2">
+                  <button href="" ng-disabled="item.num<=1" class="changeNum" ng-click="vm.delProNum(item.num-1,item.productId)"><i class="glyphicon glyphicon-minus"></i></button><input type="number" name="" min="1" ng-model="item.num" ng-value="item.num" ng-blur="vm.changeNum(item.num,item.productId);" ng-pattern="/^[1-9]\d*$/"><button href="" class="changeNum" ng-click="vm.addProNum(item.num+1,item.productId);"><i class="glyphicon glyphicon-plus"></i></button></td>
+                <td class="col-xs-2 col-sm-2">{{item.num * item.productInfo.productPrice}}元</td>
+                <td><a href="" ng-click="vm.delCartPro(item.productId)">删除</a></td>
+              </tr>
+            </tbody>
+            <!-- <tfoot>
+              <tr>
+                <td colspan="8" class="text-center">
+                  <div st-items-by-page="4" st-pagination="" st-template="app/components/pagination.custom.html"></div>
+                </td>
+              </tr>
+            </tfoot> -->
+          </table>
+        </div>
+        <div class="product_pay">
+          <a ui-sref="indexContent">继续购物</a>&nbsp;&nbsp;&nbsp;&nbsp;共<span>{{vm.cart.shoppingNum}}</span>件商品，已选择<span>{{vm.check_proNum}}件</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>合计：{{vm.check_proPrice}}元</span>
+          <div class="payfor"><button class="btn btn-success" ng-click="vm.settlement()">结算</button></div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container" ng-if="!vm.cart">
+      <div class="cart-empty">
+        <h2>您的购物车还是空的!</h2>
+        <p class="login-desc">登录后将显示您之前加入的商品</p>
+        <div class="cart_btn">
+          <a ng-if="!vm.login" ui-sref="login" class="btn btn_login">立即登录</a>
+          <a ui-sref="indexContent" class="btn btn_shopping">马上去购物</a>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>

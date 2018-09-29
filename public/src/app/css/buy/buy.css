@@ -1,0 +1,285 @@
+.buy {
+  font-size: 14px;
+}
+.buy .nav-pills {
+  background: #f0f0f0;
+  padding: 0 20%;
+}
+.buy .pro-nav-bar {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #dfdfdf;
+}
+.buy .pro-nav-bar .current {
+  border-bottom-color: #333;
+}
+.buy .pro-nav-9 li {
+  width: 11.11111%;
+}
+.buy .pro-nav-bar li {
+  float: left;
+  _display: inline;
+  height: 76px;
+  line-height: 76px;
+  margin: 0 0 -1px;
+  list-style: none;
+  text-align: center;
+  font-size: 14px;
+  border-bottom: 1px solid #dfdfdf;
+  cursor: pointer;
+}
+.buy .pro-nav-bar li a {
+  display: block;
+  color: #333;
+  outline: none;
+  line-height: 75px;
+  padding: 0;
+  border: 0;
+}
+.buy .nav-tabs > li.active {
+  border-bottom: 1px solid #000!important;
+}
+.buy .nav-tabs > li.active > a:hover {
+  background-color: #fff;
+}
+.buy .nav-tabs > li.active > a {
+  border: 0;
+}
+.buy .pro-view {
+  width: 600px;
+  height: 600px;
+  float: left;
+  _display: inline;
+  margin: 50px 0 0 48px;
+  overflow: hidden;
+  _zoom: 1;
+}
+.buy .pro-view span {
+  font-size: 36px;
+  text-align: center;
+  vertical-align: middle;
+  color: #ccc;
+}
+.buy .pro-info {
+  float: right;
+  width: 544px;
+  margin-top: 60px;
+}
+.buy .pro-info .pro-title {
+  margin-bottom: 25px;
+  border-bottom: 1px solid #dfdfdf;
+  position: relative;
+}
+.buy .pro-info .pro-title .pro-more {
+  position: absolute;
+  top: 26px;
+  right: 0;
+  color: #666;
+  font-size: 12px;
+}
+.buy .pro-info .pro-title .pro-price {
+  margin-left: 10px;
+  color: #ff6700;
+}
+.buy .pro-info .pro-title h1 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 56px;
+  font-weight: normal;
+}
+.buy .pro-info .pro-choose-step .pro-version-desc {
+  display: inline-block;
+  margin-left: 12px;
+  min-height: 20px;
+  line-height: 1.5;
+  font-size: 12px;
+  color: #b0b0b0;
+}
+.buy .pro-info .pro-choose-step .step-title {
+  height: 36px;
+  line-height: 36px;
+  padding: 0;
+  margin: 10px 0;
+  font-weight: normal;
+  font-size: 18px;
+}
+.buy .pro-info .pro-choose-step .step-list {
+  margin: 0 0 0 -14px;
+  padding: 0;
+}
+.buy .pro-info .pro-choose-step .step-list .active {
+  border-color: #f36701;
+}
+.buy .pro-info .pro-choose-step .step-list li {
+  float: left;
+  _display: inline;
+  width: 263px;
+  height: 48px;
+  line-height: 48px;
+  margin: 0 0 14px 14px;
+  border: 1px solid #dfdfdf;
+  list-style: none;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  outline: none;
+}
+.buy .pro-info .choose-result-msg {
+  margin: 26px 0 10px;
+}
+.buy .pro-info .choose-result-msg .msg-bd {
+  margin-top: 8px;
+  line-height: 24px;
+  color: #666;
+  font-size: 12px;
+}
+.buy .pro-info .btn {
+  display: inline-block;
+  width: 158px;
+  height: 38px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #b0b0b0;
+  font-size: 14px;
+  line-height: 38px;
+  text-align: center;
+  color: #b0b0b0;
+  cursor: pointer;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  border-radius: 0;
+}
+.buy .pro-info .btn-primary {
+  background: #ff6700;
+  border-color: #ff6700;
+  color: #fff;
+}
+.buy .pro-info .pro-choose-step .step-list .active {
+  border-color: #f36701;
+  outline: none;
+}
+.buy .pro-info .pro-choose-result .btn {
+  margin-right: 20px;
+}
+.buy .container2 {
+  width: 1226px;
+  margin: 0 auto;
+  padding: 50px 0;
+  border-top: 1px solid #e0e0e0;
+}
+.buy .container2 .row {
+  margin: 0;
+}
+.buy .container2 .span3 {
+  width: 200px;
+  padding-right: 20px;
+  float: left;
+}
+.buy .container2 .span9 {
+  width: 500px;
+  padding-right: 20px;
+  float: left;
+}
+.buy .container2 .span5 {
+  width: 296px;
+  padding-right: 20px;
+  float: left;
+}
+.buy .container2 .span15 {
+  width: 916px;
+  padding-right: 20px;
+  float: left;
+}
+.buy .container2 .context {
+  line-height: 40px;
+  font-size: 16px;
+  color: #333;
+}
+.buy .container2 .list li {
+  font-size: 16px;
+  line-height: 2.375;
+  width: 186px;
+  float: left;
+  list-style-type: disc;
+  text-align: left;
+}
+.buy .container3 {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 10px 0;
+  border-top: 1px solid #e0e0e0;
+}
+.buy .container3 .row {
+  margin: 0;
+}
+.buy .container3 .span3 {
+  width: 200px;
+  padding-right: 20px;
+  float: left;
+}
+.buy .container3 .span9 {
+  width: 500px;
+  padding-right: 20px;
+  float: left;
+}
+.buy .container3 .span5 {
+  width: 200px;
+  padding-right: 20px;
+  float: left;
+}
+.buy .container3 .span15 {
+  width: 700px;
+  padding-right: 20px;
+  float: left;
+}
+.buy .container3 .context {
+  line-height: 40px;
+  font-size: 16px;
+  color: #333;
+}
+.buy .container3 .list li {
+  font-size: 16px;
+  line-height: 2.375;
+  width: 186px;
+  float: left;
+  list-style-type: disc;
+  text-align: left;
+}
+.phone .pro_box {
+  width: 100%;
+  margin: 0 auto;
+}
+.phone .pro_box .pro_ul {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.phone .pro_box .pro_ul .pro_li {
+  width: 238px;
+  padding: 30px 10px 20px 10px;
+  display: inline-block;
+  float: left;
+  height: 245px;
+  background-color: #fff;
+  border-right: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.phone .pro_box .pro_ul .pro_li img {
+  display: block;
+  margin: 0 auto;
+}
+.phone .pro_box .pro_ul .pro_li p {
+  font-size: 14px;
+  line-height: 20px;
+}
+.phone .pro_box .pro_ul .pro_li .productname {
+  margin-top: 20px;
+  color: #333;
+}
+.phone .pro_box .pro_ul .pro_li .productminprice {
+  color: #F10000;
+}
+.phone .pro_box .pro_ul li:nth-child(5n) {
+  border-right: 0;
+}

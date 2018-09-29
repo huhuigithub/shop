@@ -1,0 +1,224 @@
+.cart {
+  font-size: 14px;
+}
+.cart .text-r {
+  color: #f00000;
+}
+.cart .text-g {
+  color: #00d000;
+}
+.cart .text-b {
+  color: #1E90FF;
+}
+.cart .clear {
+  clear: both;
+}
+.cart .product_list {
+  margin-top: 30px;
+}
+.cart .product_info,
+.cart .product_pay {
+  margin-top: 30px;
+  border: 1px solid #ccc;
+}
+.cart .product_pay {
+  vertical-align: middle;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 0 0 20px;
+}
+.cart .payfor {
+  position: relative;
+  right: 0;
+  top: 0;
+  float: right;
+  height: 100%;
+}
+.cart .payfor .btn {
+  display: block;
+  top: 0;
+  width: 100px;
+  border-radius: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+.cart .table {
+  word-break: break-all;
+  word-wrap: break-all;
+}
+.cart .table tr th,
+.cart .table tr td {
+  vertical-align: middle;
+}
+.cart .table tr th {
+  line-height: 30px;
+}
+.cart .table tr td > input {
+  width: 40px;
+  text-align: center;
+}
+.cart .table tr td a {
+  color: #333;
+}
+.cart .table tr td .changeNum {
+  display: inline-block;
+  width: 40px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: normal;
+  outline: none;
+  background-color: transparent;
+  border: none;
+}
+.cart .table tr td .changeNum:disabled {
+  color: #ddd;
+}
+.cart .cart-empty h2,
+.cart .cart-empty p {
+  display: block;
+  text-align: center;
+  line-height: 30px;
+}
+.cart .cart-empty .cart_btn {
+  position: absolute;
+  margin-left: 50%;
+  left: -100px;
+}
+.cart .cart-empty .cart_btn a {
+  color: #fff;
+  padding: 10px;
+}
+.cart .cart-empty .cart_btn .btn_login {
+  border-radius: 0;
+  background-color: #5CE640;
+  margin-right: 50px;
+}
+.cart .cart-empty .cart_btn .btn_shopping {
+  border-radius: 0;
+  background-color: #f10000;
+}
+.getOrderInfo .text-r {
+  color: #f00000;
+}
+.getOrderInfo .text-g {
+  color: #00d000;
+}
+.getOrderInfo .text-b {
+  color: #1E90FF;
+}
+.getOrderInfo .form-control,
+.getOrderInfo select {
+  border-radius: 0!important;
+}
+.getOrderInfo .payInfo {
+  display: table;
+  width: 100%;
+  vertical-align: middle;
+}
+.getOrderInfo .payInfo .orderAdd {
+  text-indent: 20px;
+  font-size: 13px;
+  float: left;
+  text-align: left;
+  line-height: 35px;
+}
+.getOrderInfo .payInfo .btn {
+  display: block;
+  top: 0;
+  width: 100px;
+  border-radius: 0;
+  height: 100%;
+  box-sizing: border-box;
+  float: right;
+  margin-left: 30px;
+}
+.getOrderInfo .title {
+  font-size: 18px;
+  padding: 20px 10px;
+}
+.getOrderInfo ul {
+  margin: 0 20px;
+  padding: 0;
+}
+.getOrderInfo .payList ul {
+  float: right;
+}
+.getOrderInfo ul li {
+  list-style-type: none;
+  white-space: nowrap;
+}
+.getOrderInfo ul li div {
+  vertical-align: middle;
+}
+.getOrderInfo .address li {
+  position: relative;
+  width: 340px;
+  height: 280px;
+  list-style-type: none;
+  line-height: 30px;
+  margin: 20px 12px 0 12px;
+  padding: 20px;
+  float: left;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.getOrderInfo .default {
+  border: 1px solid #f00000!important;
+  box-sizing: border-box;
+}
+.getOrderInfo .default_text {
+  color: #fff;
+  background-color: #ccc;
+  padding: 5px;
+}
+.getOrderInfo .select_text {
+  color: #fff;
+  background-color: #f00000;
+  padding: 5px;
+}
+.getOrderInfo .address_opt {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.getOrderInfo .martop20 {
+  margin-top: 20px;
+}
+.getOrderInfo .userInfo {
+  font-size: 14px;
+}
+.getOrderInfo .userInfo .userInfo_1 {
+  display: inline-block;
+  width: 140px;
+  height: 30px;
+  border: 1px solid #ddd;
+  text-align: center;
+  line-height: 30px;
+}
+.getOrderInfo table tr td {
+  vertical-align: middle;
+  padding: 10px 0;
+}
+.getOrderInfo .payList {
+  border-top: 1px solid #ccc;
+  text-align: right;
+}
+.getOrderInfo .payList ul li {
+  line-height: 30px;
+}
+.getOrderInfo .payList .shop {
+  display: inline-block;
+  width: 70px;
+  color: #f00000;
+}
+.getOrderInfo .payList .big {
+  font-size: 20px;
+  line-height: 40px;
+}
+.getOrderInfo .backCart {
+  float: right;
+}
+.getOrderInfo .backCart a {
+  color: #f00000;
+  font-size: 14px;
+}

@@ -1,0 +1,84 @@
+<div class="person">
+  <ul class="breadcrumb">
+    <li><a ui-sref="home">主页</a></li>
+    <li>个人信息</li>
+  </ul>
+  <div class="title">个人信息</div>
+  <div class="well" style="width:98%;">
+    <div class="personlist">
+      <div class="table-responsive">
+        <div class="panel-body">
+          <table class="table table-stripe">
+            <thead>
+              <th>基本信息</th>
+            <tbody>
+              <tr>
+                <td>姓名</td>
+                <td>{{vm.login.adminName}}</td>
+              </tr>
+              <tr>
+                <td>手机</td>
+                <td>{{vm.login.adminPhone}}</td>
+              </tr>
+              <tr>
+                <td>角色</td>
+                <td>{{vm.login.adminRole}}</td>
+              </tr>
+              <tr>
+                <td>状态</td>
+                <td>{{vm.login.adminStatus}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div> 
+      <div class="">
+        <div class="panel-body">
+          <div class="title">密码修改</div>
+          <form class="form-horizontal" name="form" role="form" autocomplete="off">
+            <div class="form-group" ng-class="{'has-error': form.oldpassword.$invalid && !form.oldpassword.$pristine || vm.passwordCheckType}">
+              <label for="oldpassword" class="col-sm-2 control-label">原始密码</label>
+              <div class="col-sm-9">
+                <input type="password" name="oldpassword" ng-model="vm.oldpassword" class="form-control" ng-keyup="vm.passwordKeyup()" ng-blur="vm.passwordCheck()" id="oldpassword" placeholder="请输入密码" ng-pattern="/^[^\s]{1,}$/" required autocomplete="off">
+                <div ng-if="form.oldpassword.$invalid && form.oldpassword.$dirty" ng-messages="form.oldpassword.$error">
+                  <p class="help-block" ng-message="required">请输入密码</p>
+                  <p class="help-block" ng-message="pattern">密码不能输入空格</p>
+                </div>
+                <p style="color:#a94442" class="help-block" ng-show="vm.oldpassword&&vm.passwordCheckType">原始密码错误,请重新输入！</p>
+              </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': form.password.$invalid && !form.password.$pristine || vm.oldpassword == vm.password && vm.oldpassword}">
+              <label for="password" class="col-sm-2 control-label">密码</label>
+              <div class="col-sm-9">
+                <input type="password" ng-disabled="vm.passwordCheckType ||form.oldpassword.$pristine || !vm.oldpassword || vm.keyupDisabled" name="password" ng-model="vm.password" ng-pattern="/^[^\s]{1,}$/" class="form-control" ng-minlength="6" ng-maxlength="16" id="password" placeholder="请输入新密码" required>
+                <div ng-if="form.password.$invalid && form.password.$dirty || pattern && form.password.$dirty || vm.oldpassword == vm.password && vm.oldpassword" ng-messages="form.password.$error">
+                  <p class="help-block" ng-message="required">请输入新密码</p>
+                <p class="help-block" ng-message="minlength || maxlength">密码长度为6-16位</p>
+                <p style="color:#a94442" class="help-block" ng-show="vm.oldpassword == vm.password && vm.oldpassword">新密码不能与原密码相同</p>
+                  <p class="help-block" ng-message="pattern">密码不能输入空格</p>
+                </div>
+              </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': form.passwordagain.$invalid && !form.passwordagain.$pristine || vm.passwordagain !== vm.password && !form.passwordagain.$pristine }">
+              <label for="passwordagain" class="col-sm-2 control-label">确认密码</label>
+              <div class="col-sm-9">
+                <input type="password" ng-disabled="vm.passwordCheckType ||form.oldpassword.$pristine ||!vm.oldpassword || vm.keyupDisabled" class="form-control" ng-model="vm.passwordagain" id="passwordagain" name="passwordagain" placeholder="请再一次输入密码" required>
+                <div class="help-block" ng-messages="form.passwordagain.$error"  ng-if="vm.passwordagain!==vm.password && form.passwordagain.$dirty &&!form.passwordagain.$error.required">
+                  <p ng-show="vm.passwordagain!==vm.password">两次密码输入不一致</p>
+                </div>
+                <div class="help-block" ng-messages="form.passwordagain.$error" ng-if="form.passwordagain.$dirty && !form.passwordagain.$pristine ">
+                  <p ng-message="required">请再一次输入密码</p>
+                </div>
+              </div>
+            </div>
+            <div class="marginbottom30px col-md-2 col-sm-offset-2">
+              <button ng-disabled="form.$invalid || vm.passwordCheckType || vm.passwordagain!==vm.password || vm.oldpassword == vm.password && vm.oldpassword" ng-click="vm.passwordSubmit()" class="btn btn-success">提交</button>
+            </div>
+          </form>
+        </div>
+      </div>   
+    </div>
+    <div class="clear"></div>
+  </div>
+    
+</div>

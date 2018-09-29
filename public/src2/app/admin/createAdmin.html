@@ -1,0 +1,87 @@
+<div class="admin">
+  <ul class="breadcrumb">
+    <li><a ui-sref="home">主页</a></li>
+    <li><a ui-sref="adminContent">管理员账户管理管理</a></li>
+    <li class="active">管理员新增</li>
+  </ul>
+  <div class="title">管理员新增</div>
+  <div class="well">
+    <form class="form-horizontal" name="form" role="form">
+      <div class="col-sm-12">
+        <div class="row clearfix">
+          <div class="col-md-11 col-sm-11 column">
+            <div class="formbox">
+              <div class="form-group" ng-class="{'has-error': form.username.$invalid && !form.username.$pristine || vm.namelength >50}">
+                <label for="firstname" class="col-sm-2 control-label">姓名</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="username" ng-model="vm.name" ng-keyup="vm.nameKeyup()" ng-blur="vm.nameKeyup()" placeholder="姓名" required>
+                  <div ng-if="form.username.$invalid && form.username.$dirty ||vm.namelength >50" ng-messages="form.username.$error">
+                    <p class="help-block" ng-message="required">姓名必填</p>
+                    <p class="help-block" ng-show="vm.namelength >50">姓名不能超过50个字母或25个汉字</p>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group" ng-class="{'has-error': form.mobile.$invalid && form.mobile.$dirty || vm.phoneType}">
+                <label for="firstname" class="col-sm-2 control-label">手机</label>
+                <div class="col-sm-10">
+                  <input type="text" ng-blur="vm.phoneCheck()" ng-keyup="vm.phoneCheck()" class="form-control" placeholder="请输入手机" maxlength="11" name="mobile" ng-model="vm.phone" ng-pattern="/^1[34578]\d{9}$/" required>
+                  <div class="help-block" ng-if="form.mobile.$invalid && form.mobile.$dirty" ng-messages="form.mobile.$error">
+                    <p class="help-block" ng-message="required">手机必填</p>
+                    <p class="help-block" ng-message="pattern">请输入有效的手机号码</p>
+                  </div>
+                  <p style="color:#a94442" class="help-block" ng-show="vm.phoneType">该手机号码已注册</p>
+                </div>
+              </div>
+              <div class="form-group" ng-class="{'has-error': form.password.$invalid && !form.password.$pristine}">
+                <label for="password" class="col-sm-2 control-label">密码</label>
+                <div class="col-sm-10">
+                  <input type="password" name="password" ng-model="vm.password" class="form-control" ng-minlength="6" ng-maxlength="16" id="password" placeholder="请输入密码" ng-pattern="/^[^\s]{1,}$/" required>
+                  <div ng-if="form.password.$invalid && form.password.$dirty" ng-messages="form.password.$error">
+                    <p class="help-block" ng-message="required">请输入密码</p>
+                    <p class="help-block" ng-message="pattern">密码不能输入空格</p>
+                    <p class="help-block" ng-message="minlength || maxlength">密码长度为6-16位</p>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group" ng-class="{'has-error': form.passwordagain.$invalid && !form.passwordagain.$pristine || vm.passwordagain !== vm.password && !form.passwordagain.$pristine }">
+                <label for="passwordagain" class="col-sm-2 control-label">确认密码</label>
+                <div class="col-sm-10">
+                  <input type="password" class="form-control" ng-model="vm.passwordagain" id="passwordagain" name="passwordagain" placeholder="请再一次输入密码" required>
+                  <div class="help-block" ng-messages="form.passwordagain.$error"  ng-if="vm.passwordagain !== vm.password && form.passwordagain.$dirty &&!form.passwordagain.$error.required">
+                    <p ng-show="vm.passwordagain !== vm.password">两次密码输入不一致</p>
+                  </div>
+                  <div class="help-block" ng-messages="form.passwordagain.$error" ng-if="form.passwordagain.$dirty && !form.passwordagain.$pristine ">
+                    <p ng-message="required">请再一次输入密码</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 marginbottom30px">
+        <div class="row clearfix">
+          <div class="col-md-11 col-sm-11 column">
+            <div class="formbox">
+              <div class="form-group">
+                <div class="col-sm-2 control-label">角色</div>
+                <div class="col-sm-10 col-md-10 column">
+                  <label class="checkbox-inline">
+                    <input type="radio" name="role" ng-value="'超级管理员'" ng-model="vm.role" ng-click="vm.roleSelect()">&nbsp;超级管理员</span>
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="radio" name="role" ng-value="'管理员'" ng-model="vm.role" ng-click="vm.roleSelect()">&nbsp;管理员</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="marginbottom30px col-md-2 col-sm-offset-2">
+        <button ng-disabled="form.$invalid ||!vm.role" ng-click="vm.createAdmin()" class="btn btn-success">提交</button>
+      </div>
+    </form>
+    <div class="clear"></div>
+  </div>
+</div>

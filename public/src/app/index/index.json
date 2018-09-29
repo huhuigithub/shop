@@ -1,0 +1,29 @@
+{
+    "slider_wrapper":[
+        {
+            "a_href":"http://dev7studios.com",
+            "img_url":"assets/images/banner/01.jpeg",
+            "img_width":"1226",
+            "img_height":"460"
+        },
+        {
+            "a_href":"http://dev7studios.com",
+            "img_url":"assets/images/banner/02.jpeg",
+            "img_width":"1226",
+            "img_height":"460"
+        },
+        {
+            "a_href":"http://dev7studios.com",
+            "img_url":"assets/images/banner/03.jpeg",
+            "img_width":"1226",
+            "img_height":"460"
+        },
+        {
+            "a_href":"http://dev7studios.com",
+            "img_url":"assets/images/banner/04.jpeg",
+            "img_width":"1226",
+            "img_height":"460"
+        }
+    ]
+}
+

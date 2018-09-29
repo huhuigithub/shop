@@ -1,0 +1,114 @@
+<div class="phone milist">
+  <div class="breadcrumbs">
+    <div class="container">
+      <a ui-sref="indexContent">首页</a>
+      <span>></span>
+      <a href="javascript:void(0)">所有分类</a>
+    </div>
+  </div>
+  <div class="container J_category category-index">
+    <div class="xm-plain-box category-list">
+      <div class="box-hd J_box-hd">
+        <h2 class="title">手机</h2>
+      </div>
+      <div class="pro_box" style="display: block;">
+          <ul class="clearfix pro_ul">
+            <li class="pro_li" ng-repeat="item in vm.phone">
+              <a ng-if="item.productType==='手机'" ui-sref="buyphoneContent({kindId : item.kindId})" class="category-list-img">
+                <img ng-src="{{item.productImg}}" style="width: auto;height: 110px;"/>
+                <p class="productname text-center">{{item.productName}} {{item.productVersion.ver1}}+{{item.productVersion.ver2}}&nbsp;&nbsp;{{item.productColor.color}}</p>
+                <p class="productminprice text-center">￥{{item.productPrice}} 元</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <div class="xm-plain-box category-list">
+        <div class="xm-plain-box category-list">
+        <div class="box-hd J_box-hd">
+            <h2 class="title">笔记本</h2>
+        </div>
+        <div class="pro_box" style="display: block;">
+          <ul class="clearfix pro_ul">
+            <li class="pro_li" ng-repeat="item in vm.bookair">
+              <a ng-if="item.productType==='笔记本'" ui-sref="buybookairContent({kindId : item.kindId})" class="category-list-img">
+                <img ng-src="{{item.productImg}}" style="width: auto;height: 110px;"/>
+                <p class="productname text-center">{{item.productName}} {{item.productVersion.ver1}}+{{item.productVersion.ver2}}&nbsp;&nbsp;{{item.productColor.color}}</p>
+                <p class="productminprice text-center">￥{{item.productPrice}} 元</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <div class="xm-plain-box category-list">
+        <div class="xm-plain-box category-list">
+        <div class="box-hd J_box-hd">
+            <h2 class="title">平板</h2>
+        </div>
+        <div class="pro_box" style="display: block;">
+          <ul class="clearfix pro_ul">
+            <li class="pro_li" ng-repeat="item in vm.pad">
+              <a ng-if="item.productType==='平板'" ui-sref="buypadContent({kindId : item.kindId})" class="category-list-img">
+                <img ng-src="{{item.productImg}}" style="width: auto;height: 110px;"/>
+                <p class="productname text-center">{{item.productName}} {{item.productVersion.ver1}}+{{item.productVersion.ver2}}&nbsp;&nbsp;{{item.productColor.color}}</p>
+                <p class="productminprice text-center">￥{{item.productPrice}} 元</p>
+                <p class="productminprice text-center">￥{{item.productPrice}} 元</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <div class="xm-plain-box category-list">
+        <div class="xm-plain-box category-list">
+        <div class="box-hd J_box-hd">
+            <h2 class="title">电视</h2>
+        </div>
+        <div class="pro_box" style="display: block;">
+          <ul class="clearfix pro_ul">
+            <li class="pro_li" ng-repeat="item in vm.tv">
+              <a ng-if="item.productType==='电视'" ui-sref="buytvContent({kindId : item.kindId})" class="category-list-img">
+                <img ng-src="{{item.productImg}}" style="width: auto;height: 110px;"/>
+                <p class="productname text-center">{{item.productName}} {{item.productVersion.ver1}}+{{item.productVersion.ver2}}</p>
+                <p class="productminprice text-center">￥{{item.productPrice}} 元</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <div class="xm-plain-box category-list">
+        <div class="xm-plain-box category-list">
+        <div class="box-hd J_box-hd">
+            <h2 class="title">鼠标</h2>
+        </div>
+        <div class="pro_box" style="display: block;">
+          <ul class="clearfix pro_ul">
+            <li class="pro_li" ng-repeat="item in vm.mouse">
+              <a ng-if="item.productType==='鼠标'" ui-sref="buymouseContent({kindId : item.kindId})" class="category-list-img">
+                <img ng-src="{{item.productImg}}" style="width: auto;height: 110px;"/>
+                <p class="productname text-center">{{item.productName}} {{item.productVersion.ver1}}+{{item.productVersion.ver2}}&nbsp;&nbsp;{{item.productColor.color}}</p>
+                <p class="productminprice text-center">￥{{item.productPrice}} 元</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <div class="xm-plain-box category-list">
+        <div class="xm-plain-box category-list">
+        <div class="box-hd J_box-hd">
+            <h2 class="title">冰箱</h2>
+        </div>
+        <div class="pro_box" style="display: block;">
+          <ul class="clearfix pro_ul">
+            <li class="pro_li" ng-repeat="item in vm.icebox">
+              <a ng-if="item.productType==='冰箱'" ui-sref="buyIceboxContent({kindId : item.kindId})" class="category-list-img">
+                <img ng-src="{{item.productImg}}" style="width: auto;height: 110px;"/>
+                <p class="productname text-center">{{item.productName}} {{item.productVersion.ver1}}+{{item.productVersion.ver2}}&nbsp;&nbsp;{{item.productColor.color}}</p>
+                <p class="productminprice text-center">￥{{item.productPrice}} 元</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+        
+</div>

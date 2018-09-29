@@ -1,0 +1,146 @@
+<!doctype html>
+<html ng-app="mishop">
+  <head>
+    <meta charset="utf-8">
+    <title>我的商城管理平台</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="../bower_components/angular-toastr/dist/angular-toastr.css" />
+    <link rel="stylesheet" href="../bower_components/animate.css/animate.css"/>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="../bower_components/bootstrap-daterangepicker/daterangepicker.css" /> -->
+    <link rel="stylesheet" href="../bower_components/angular-busy/dist/angular-busy.min.css">
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../bower_components/sweetalert/dist/sweetalert.css">
+    <!-- <link rel="stylesheet" href="../bower_components/jquery-ui/themes/base/all.css"> -->
+    <!-- <link rel="stylesheet" href="../bower_components/datetimepicker/jquery.datetimepicker.css"> -->
+    <!-- <link rel="stylesheet" href="../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"> -->
+
+    <!-- we -->
+    <link rel="stylesheet" href="../bower_components/Nivo-Slider-jQuery/nivo-slider.css"/>
+    <link rel="stylesheet" href="../bower_components/Nivo-Slider-jQuery/themes/default/default.css"/>
+
+    <link rel="stylesheet" href="app/css/index.css">
+
+    <link rel="stylesheet" href="app/css/login/login.css">    
+    <link rel="stylesheet" href="app/css/components/header/header.css">
+    <link rel="stylesheet" href="app/css/components/header/topbar.css">
+    <link rel="stylesheet" href="app/css/components/navbar/navbar.css">
+    <link rel="stylesheet" href="app/css/users/users.css">
+    <link rel="stylesheet" href="app/css/admin/admin.css">
+    <link rel="stylesheet" href="app/css/order/order.css">
+    <link rel="stylesheet" href="app/css/product/product.css">
+
+
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div ui-view></div>
+
+
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="../bower_components/angular-touch/angular-touch.min.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="../bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!-- <script src="../bower_components/less/dist/less.min.js"></script> -->
+    <script src="../bower_components/malarkey/dist/malarkey.min.js"></script>
+    <script src="../bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="../bower_components/moment/moment.js"></script>
+    <!-- <script src="../bower_components/angular-daterangepicker/js/angular-daterangepicker.min.js"></script> -->
+    <!-- <script src="../bower_components/bootstrap-daterangepicker/daterangepicker.js"></script> -->
+    <script src="../bower_components/angular-busy/dist/angular-busy.min.js"></script>
+    <script src="../bower_components/ngSweetAlert/SweetAlert.min.js"></script>
+    <script src="../bower_components/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../bower_components/angular-smart-table/dist/smart-table.min.js"></script>
+    <!-- <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script> -->
+    <!-- <script src="../bower_components/datetimepicker/build/jquery.datetimepicker.full.min.js"></script> -->
+    <!-- <script src="../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script> -->
+
+    <script src="app/js/third/unslider.min.js"></script>
+    <script src="../bower_components/Nivo-Slider-jQuery/jquery.nivo.slider.js"></script>
+    <script src="../bower_components/checklist-model/checklist-model.js"></script>
+
+    <script src="app/index.module.js"></script>
+    <script src="app/components/webDevTec/webDevTec.service.js"></script>
+    <script src="app/components/navbar/navbar.directive.js"></script>
+    <script src="app/components/malarkey/malarkey.directive.js"></script>
+    <script src="app/components/githubContributor/githubContributor.service.js"></script>
+
+    <script src="app/js/factory/postRequest.service.js"></script>
+
+    <script src="app/main/main.controller.js"></script>
+    <script src="app/main/main2.controller.js"></script>
+    <script src="app/login/login.controller.js"></script>
+    <script src="app/index.run.js"></script>
+    <script src="app/index.route.js"></script>
+    <script src="app/index.constants.js"></script>
+    <script src="app/index.config.js"></script>
+    <script src="app/index.service.js"></script>
+
+    <!--directives-->
+    <!-- <script src="app/components/DatePicker/DatePicker.directive.js"></script> -->
+    <script src="app/components/header/header.directive.js"></script>
+    <!--directives-->
+
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/underscore/underscore-min.js"></script>
+    <script src="../bower_components/plupload/js/plupload.full.min.js"></script>
+
+    <!-- 用户管理模块 -->
+    <script  type="text/javascript" src="app/users/users.router.js"></script>
+    <script  type="text/javascript" src="app/users/users.controller.js"></script>
+    <!-- 用户管理模块 -->
+
+    <!-- 管理员账户管理模块 -->
+    <script  type="text/javascript" src="app/admin/admin.router.js"></script>
+    <script  type="text/javascript" src="app/admin/admin.controller.js"></script>
+    <script  type="text/javascript" src="app/admin/createAdmin.controller.js"></script>
+    <script  type="text/javascript" src="app/admin/updateAdmin.controller.js"></script>
+    <!-- 管理员账户管理模块 -->
+
+    <!-- 商品分类管理模块 -->
+    <script  type="text/javascript" src="app/productKind/productKind.router.js"></script>
+    <script  type="text/javascript" src="app/productKind/productKind.controller.js"></script>
+    <script  type="text/javascript" src="app/productKind/createProductKind.controller.js"></script>
+    <script  type="text/javascript" src="app/productKind/updateProductKind.controller.js"></script>
+    <!-- 商品分类管理模块 -->
+
+    <!-- 商品管理模块 -->
+    <script  type="text/javascript" src="app/product/product.router.js"></script>
+    <script  type="text/javascript" src="app/product/product.controller.js"></script>
+    <script  type="text/javascript" src="app/product/productInfo.controller.js"></script>
+    <script  type="text/javascript" src="app/product/createProduct.controller.js"></script>
+    <script  type="text/javascript" src="app/product/updateProduct.controller.js"></script>
+    <!-- 商品管理模块 -->
+
+    <!-- 个人信息模块 -->
+    <script  type="text/javascript" src="app/person/person.router.js"></script>
+    <script  type="text/javascript" src="app/person/person.controller.js"></script>
+    <!-- 个人信息模块 -->
+
+    <!-- 订单管理模块 -->
+    <script  type="text/javascript" src="app/order/order.router.js"></script>
+    <script  type="text/javascript" src="app/order/order.controller.js"></script>
+    <script  type="text/javascript" src="app/order/orderInfo.controller.js"></script>
+    <!-- 订单管理模块 -->
+
+    <!-- 商品评价管理模块 -->
+    <script  type="text/javascript" src="app/comment/comment.router.js"></script>
+    <script  type="text/javascript" src="app/comment/comment.controller.js"></script>
+    <script  type="text/javascript" src="app/comment/commentInfo.controller.js"></script>
+    <!-- 商品评价管理模块 -->
+
+  </body>
+</html>

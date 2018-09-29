@@ -1,0 +1,82 @@
+<div class="register">
+  <div class="topbar">
+    <div class="logo">HuHui</div><span class="title">欢迎注册</span>
+    <div class="login_url">已有账号？<a ui-sref="login">请登录</a></div>
+  </div>
+  <div class="register_con">
+    <form class="form-horizontal" name="form" role="form">
+      <div class="col-sm-12">
+        <div class="row clearfix">
+          <div class="col-md-12 col-sm-12 column">
+            <div class="formbox">
+              <div class="form-group" ng-class="{'has-error': form.username.$invalid && !form.username.$pristine || vm.namelength >50,'has-warning':vm.nameType}">
+                <div class="box">
+                  <label for="firstname" class="col-sm-2 control-label">用 户 名</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" maxlength="20" name="username" ng-model="vm.name" ng-keyup="vm.nameKeyup()" ng-blur="vm.nameCheck()" placeholder="用户名" required autocomplete="off"/>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div ng-if="form.username.$invalid && form.username.$dirty ||vm.namelength >50||vm.nameType" ng-messages="form.username.$error">
+                  <p class="help-block" ng-message="required">用户名必填</p>
+                  <p class="help-block" ng-show="vm.nameType">该用户名已注册</p>
+                </div>
+              </div>
+              <div class="form-group" ng-class="{'has-error': form.mobile.$invalid && form.mobile.$dirty||!vm.phoneFormat,'has-warning':vm.phoneType}">
+                <div class="box">
+                  <label for="firstname" class="col-sm-2 control-label">手机号码</label>
+                  <div class="col-sm-10">
+                    <input type="text" maxlength="11" ng-keyup="vm.phoneKeyup()" ng-blur="vm.phoneCheck()" class="form-control" placeholder="请输入手机" name="mobile" ng-model="vm.phone" required autocomplete="off"/>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="help-block" ng-class="{'has-error': form.mobile.$invalid && form.mobile.$dirty||!vm.phoneFormat,'has-warning':vm.phoneType}" ng-if="form.mobile.$invalid && form.mobile.$dirty||!vm.phoneFormat ||vm.phoneType" ng-messages="form.mobile.$error">
+                  <p class="help-block" ng-message="required">手机必填</p>
+                  <p class="help-block" ng-show="!vm.phoneFormat">请输入有效的手机号码</p>
+                  <p class="help-block" ng-show="vm.phoneType">该手机号码已注册</p>
+                </div>
+                
+              </div>
+
+              <div class="form-group" ng-class="{'has-error': form.password.$invalid && !form.password.$pristine}">
+                <div class="box">
+                  <label for="password" class="col-sm-2 control-label">设置密码</label>
+                  <div class="col-sm-10">
+                    <input type="password" name="password" ng-model="vm.password" class="form-control" ng-minlength="6" ng-maxlength="16" id="password" placeholder="请输入密码" ng-pattern="/^[^\s]{1,}$/" required autocomplete="off"/>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div ng-class="{'has-error': form.password.$invalid && !form.password.$pristine}" ng-if="form.password.$invalid && form.password.$dirty" ng-messages="form.password.$error">
+                  <p class="help-block" ng-message="required">请输入密码</p>
+                  <p class="help-block" ng-message="pattern">密码不能输入空格</p>
+                  <p class="help-block" ng-message="minlength || maxlength">密码长度为6-16位</p>
+                </div>
+              </div>
+
+              <div class="form-group" ng-class="{'has-error': form.passwordagain.$invalid && !form.passwordagain.$pristine || vm.passwordagain !== vm.password && !form.passwordagain.$pristine }">
+                <div class="box">
+                  <label for="passwordagain" class="col-sm-2 control-label">确认密码</label>
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" ng-model="vm.passwordagain" id="passwordagain" name="passwordagain" placeholder="请再一次输入密码" required autocomplete="off"/>
+                  </div>
+                  <div class="clear"></div>
+                </div>
+                <div class="help-block" ng-messages="form.passwordagain.$error"  ng-if="vm.passwordagain !== vm.password && form.passwordagain.$dirty &&!form.passwordagain.$error.required">
+                  <p ng-show="vm.passwordagain !== vm.password">两次密码输入不一致</p>
+                </div>
+                <div class="help-block" ng-messages="form.passwordagain.$error" ng-if="form.passwordagain.$dirty && !form.passwordagain.$pristine ">
+                  <p ng-message="required">请再一次输入密码</p>
+                </div>
+              </div>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="marginbottom30px">
+        <button ng-disabled="form.$invalid" ng-click="vm.createUser()" class="btn btn-success col-md-12">提交</button>
+      </div>
+    </form>
+    <div class="clear"></div>
+  </div>
+</div>

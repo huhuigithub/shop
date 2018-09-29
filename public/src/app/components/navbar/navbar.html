@@ -1,0 +1,40 @@
+<nav class="navbar" style="background-color:#408ab4;min-height:450px">
+  <ul class="nav nav-stacked" style="color:#fff">
+    <li class="text-left"><a class="myli" ng-href="/#/home"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;&nbsp;主页</a>
+    </li>
+    <li class="text-left" ng-show="vm.permission.staffIsStaffManage == '1'"><a class="myli" ui-sref="usersContent"><i
+      class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;用户管理</a></li>
+    <!-- <li class="text-left"><a class="myli" ng-href="#">权限管理</a></li>
+    <li class="text-left"><a class="myli" ng-href="#">模块管理</a></li> -->
+
+    <li class="text-left" ng-show="vm.permission.staffIsNewsManage == '1'">
+      <a class="myli" ui-sref="newsContent">
+        <i class="fa fa-file" aria-hidden="true"></i>&nbsp;&nbsp;新闻管理
+      </a>
+    </li>
+    <li class="text-left" ng-show="vm.permission.staffIsNoticeManage == '1'">
+      <a class="myli" ui-sref="noticeContent">
+        <i class="fa fa-file" aria-hidden="true"></i>&nbsp;&nbsp;通知公告
+      </a>
+    </li>
+    <li class="text-left" ng-show="vm.permission.staffIsPulpitManage == '1'">
+      <a class="myli" ui-sref="activeContent">
+        <i class="fa fa-file" aria-hidden="true"></i>&nbsp;&nbsp;石湖讲坛
+      </a>
+    </li>
+    <li class="text-left" ng-show="vm.permission.staffIsStaffManage == '1'"><a class="myli" ui-sref="activityContent"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;活动管理</a></li>
+    <li class="text-left" ng-show="vm.permission.staffIsNewsCheckManage == '1'"><a class="myli" ui-sref="checksContent"><i
+      class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;&nbsp;新闻审核&nbsp;&nbsp;<span class="badge">{{vm.tasks.newsNum}}</a>
+    </li>
+    <li class="text-left" ng-show="vm.permission.staffIsNoticeCheckManage == '1'"><a class="myli" ui-sref="checksContent.notice"><i
+      class="fa fa-check-square" aria-hidden="true"></i>&nbsp;&nbsp;通知公告审核&nbsp;&nbsp;<span class="badge">{{vm.tasks.noticeNum}}</a>
+    </li>
+    <li class="text-left" ng-show="vm.permission.staffIsFeedBackManage == '1'"><a class="myli" ui-sref="suggestionContent"><i
+      class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;开门纳言&nbsp;&nbsp;<span class="badge">{{vm.tasks.feedbackNum}}</span></a>
+    </li>
+    <li class="text-left" ng-show="vm.permission.staffIsScoreManage == '1'"><a class="myli" ui-sref="pointsContent"><i
+      class="fa fa-database" aria-hidden="true">&nbsp;&nbsp;</i>积分配置</a></li>
+
+  </ul>
+
+</nav>

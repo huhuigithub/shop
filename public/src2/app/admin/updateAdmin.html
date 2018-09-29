@@ -1,0 +1,67 @@
+<div class="admin">
+  <ul class="breadcrumb">
+    <li><a ui-sref="home">主页</a></li>
+    <li><a ui-sref="adminContent">管理员账户管理管理</a></li>
+    <li class="active">管理员编辑</li>
+  </ul>
+  <div class="title">管理员编辑</div>
+  <div class="well">
+    <form class="form-horizontal" name="form" role="form">
+      <div class="col-sm-12">
+        <div class="row clearfix">
+          <div class="col-md-11 col-sm-11 column">
+            <div class="formbox">
+              <div class="form-group" ng-class="{'has-error': form.username.$invalid && !form.username.$pristine || vm.namelength >50}">
+                <label for="firstname" class="col-sm-2 control-label">姓名</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="username" ng-model="vm.name" ng-keyup="vm.nameKeyup()" ng-blur="vm.nameKeyup()" placeholder="姓名" required>
+                  <div ng-if="form.username.$invalid && form.username.$dirty ||vm.namelength >50" ng-messages="form.username.$error">
+                    <p class="help-block" ng-message="required">姓名必填</p>
+                    <p class="help-block" ng-show="vm.namelength >50">姓名不能超过50个字母或25个汉字</p>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group" ng-class="{'has-error': form.mobile.$invalid && form.mobile.$dirty || vm.phoneType}">
+                <label for="firstname" class="col-sm-2 control-label">手机</label>
+                <div class="col-sm-10">
+                  <input type="text" ng-blur="vm.phoneCheck()" ng-keyup="vm.phoneCheck()" class="form-control" placeholder="请输入手机" name="mobile" ng-model="vm.phone" ng-pattern="/^1[34578]\d{9}$/" required>
+                  <div class="help-block" ng-if="form.mobile.$invalid && form.mobile.$dirty" ng-messages="form.mobile.$error">
+                    <p class="help-block" ng-message="required">手机必填</p>
+                    <p class="help-block" ng-message="pattern">请输入有效的手机号码</p>
+                  </div>
+                  <p style="color:#a94442" class="help-block" ng-show="vm.phoneType">该手机号码已注册</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 marginbottom30px">
+        <div class="row clearfix">
+          <div class="col-md-11 col-sm-11 column">
+            <div class="formbox">
+              <div class="form-group">
+                <div class="col-sm-2 control-label">角色</div>
+                <div class="col-sm-10 col-md-10 column">
+                  <label class="checkbox-inline">
+                    <input type="radio" name="role" ng-value="'超级管理员'" ng-model="vm.role" ng-click="vm.roleSelect()">&nbsp;超级管理员</span>
+                  </label>
+                  <label class="checkbox-inline">
+                    <input type="radio" name="role" ng-value="'管理员'" ng-model="vm.role" ng-click="vm.roleSelect()">&nbsp;管理员</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="marginbottom30px col-md-10 col-sm-offset-2">
+        <button ng-disabled="form.$invalid ||!vm.role" ng-click="vm.updateAdmin()" class="btn btn-success">提交</button>
+        <button ng-click="vm.pswReset()" class="btn btn btn-warning">密码重置</button>
+        <button ng-click="vm.changeStatus('冻结')" ng-show="vm.adminStatus==='激活'" class="btn btn btn-danger">冻结账户</button>
+        <button ng-click="vm.changeStatus('激活')" ng-show="vm.adminStatus==='冻结'" class="btn btn btn-info">激活账户</button>
+      </div>
+    </form>
+    <div class="clear"></div>
+  </div>
+</div>

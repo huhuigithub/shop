@@ -1,0 +1,264 @@
+<div class="product">
+  <ul class="breadcrumb">
+    <li><a ui-sref="home">主页</a></li>
+    <li><a ui-sref="productKindContent">商品分类管理</a></li>
+    <li class="active">修改商品商品分类</li>
+  </ul>
+  <div class="title">修改商品商品分类</div>
+  <div class="col-sm-12">
+    <form class="form-horizontal marginBottom20px" name="form" role="form">
+      <div class="formbox">
+        <div class="form-group col-sm-6" ng-class="{'has-error': form.productName.$invalid && !form.productName.$pristine}">
+          <label for="firstname" class="col-sm-4 control-label">商品名称</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" name="productName" ng-model="vm.productName" placeholder="商品名称（汉字：25个，字母：50个）" ng-keyup="vm.productNameKeyup()" ng-blur="vm.productNameKeyup()" required>
+            <span class="glyphicon text-info glyphicon-ok form-control-feedback right15px" ng-if="vm.productName"></span>
+            <div ng-if="form.productName.$invalid && form.productName.$dirty" ng-messages="form.productName.$error">
+              <p class="help-block" ng-message="required">商品名称必填</p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-sm-6">
+          <label for="productType" class="col-sm-4 control-label">商品类型</label>
+          <div class="col-sm-8">
+            <select class="form-control" ng-change="vm.productTypeSelect()" ng-model="vm.productType" ng-required="!vm.productType || vm.productType===''">
+              <option value="">请选择</option>
+              <option value="item.type" ng-value="item.type" ng-repeat="item in vm.parameter.type">{{item.type}}</option>
+            </select>
+            <span class="glyphicon text-info glyphicon-ok form-control-feedback right15px" ng-if="vm.productType"></span>
+          </div>
+        </div>
+        <div class="form-group col-sm-6">
+          <label for="productType" class="col-sm-4 control-label">商品品牌</label>
+          <div class="col-sm-8">
+            <select class="form-control" ng-change="vm.productBrandSelect()" ng-model="vm.productBrand" ng-required="!vm.productBrand || vm.productBrand===''">
+              <option value="">请选择</option>
+              <option ng-if="item.type === vm.productType" value="item.brand" ng-value="item.brand" ng-repeat="item in vm.parameter.brand">{{item.brand}}</option>
+            </select>
+            <span class="glyphicon text-info glyphicon-ok form-control-feedback right15px" ng-if="vm.productBrand"></span>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-class="{'has-error': form.productMinPrice.$invalid && !form.productMinPrice.$pristine}">
+          <label for="firstname" class="col-sm-4 control-label">商品起价</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" name="productMinPrice" ng-model="vm.productMinPrice" placeholder="商品起步价格（汉字：25个，字母：50个）" required>
+            <span class="glyphicon text-info glyphicon-ok form-control-feedback right15px" ng-if="vm.productMinPrice"></span>
+            <div ng-if="form.productMinPrice.$invalid && form.productMinPrice.$dirty" ng-messages="form.productMinPrice.$error">
+              <p class="help-block" ng-message="required">商品起步价格必填</p>
+            </div>
+          </div>
+        </div>
+        <!-- 平板 -->
+        <div class="form-group" ng-if="vm.productType==='平板'">
+          <label for="expertSchedule" class="col-sm-2 control-label">尺寸：</label>
+          <div class="col-sm-10">
+            <div class="col-sm-2" ng-repeat="person in vm.list" style="margin-bottom: 15px;">
+              <input type="number" step="0.01" ng-change="vm.ok()" ng-model="$parent.conf[$index]" class="form-control" placeholder="尺寸" style="width:70%;display:inline-block;" required />寸
+              <a ng-show="$index!=0" style="color:red;display:inline-block;" ng-click="vm.del($index)"><i class="glyphicon glyphicon-minus"></i></a>
+            </div>
+            <a ng-click="vm.add()"><i class="glyphicon glyphicon-plus"></i>添加</a>
+          </div>
+        </div>
+        <!-- 冰箱 -->
+        <div class="form-group" ng-if="vm.productType==='冰箱'">
+          <label for="expertSchedule" class="col-sm-2 control-label">容积：</label>
+          <div class="col-sm-10">
+            <div class="col-sm-2" ng-repeat="person in vm.list" style="margin-bottom: 15px;">
+              <input type="number" step="0.01" ng-change="vm.ok()" ng-model="$parent.conf[$index]" class="form-control" placeholder="容积" style="width:70%;display:inline-block;" required />升
+              <a ng-show="$index!=0" style="color:red;display:inline-block;" ng-click="vm.del($index)"><i class="glyphicon glyphicon-minus"></i></a>
+            </div>
+            <a ng-click="vm.add()"><i class="glyphicon glyphicon-plus"></i>添加</a>
+          </div>
+        </div>
+        <div class="form-group col-sm-12" ng-if="vm.productType==='冰箱'">
+          <label for="firstname" class="col-sm-2 control-label">类别</label>
+          <label ng-repeat = "item in vm.parameter.doorKind" style="margin-right:20px;">
+            <input type = "checkbox" ng-click="vm.doorSelect()" checklist-model = "vm.choseDoor" checklist-value = "item.kind"> {{item.kind}}
+          </label> 
+        </div>
+        <!-- 键盘 -->
+        <div class="form-group" ng-if="vm.productType==='键盘'">
+          <label for="expertSchedule" class="col-sm-2 control-label">型号：</label>
+          <div class="col-sm-10">
+            <div class="col-sm-2" ng-repeat="person in vm.list" style="margin-bottom: 15px;">
+              <input type="text" ng-change="vm.ok()" ng-model="$parent.conf[$index]" class="form-control" placeholder="型号" style="width:70%;display:inline-block;" required />
+              <a ng-show="$index!=0" style="color:red;display:inline-block;" ng-click="vm.del($index)"><i class="glyphicon glyphicon-minus"></i></a>
+            </div>
+            <a ng-click="vm.add()"><i class="glyphicon glyphicon-plus"></i>添加</a>
+          </div>
+        </div>
+        <!-- 键盘 -->
+        <div class="form-group col-sm-12" ng-if="vm.productType==='手机'||vm.productType==='平板'">
+          <label for="firstname" class="col-sm-2 control-label">系统内存-RAM</label>
+          <label ng-repeat = "item in vm.parameter.RAM" style="margin-right:20px;">
+            <input type = "checkbox" ng-click="vm.RAMSelect(vm.RAM.index)" checklist-model = "vm.choseRAM" checklist-value = "item.RAMsize"> {{item.RAMsize}}
+          </label> 
+        </div>
+        <div class="form-group col-sm-12" ng-if="vm.productType==='手机'||vm.productType==='平板'">
+          <label for="firstname" class="col-sm-2 control-label">机身存储-ROM</label>
+          <label ng-repeat = "item in vm.parameter.bookROM" style="margin-right:20px;">
+            <input type = "checkbox" ng-click="vm.ROMSelect(vm.ROM.index)" checklist-model = "vm.choseROM" checklist-value = "item.ROMsize"> {{item.ROMsize}}
+          </label> 
+        </div>
+        <div class="form-group col-sm-12" ng-if="vm.productType==='笔记本'">
+          <label for="firstname" class="col-sm-2 control-label">系统内存-RAM</label>
+          <label ng-repeat = "item in vm.parameter.bookRAM" style="margin-right:20px;">
+            <input type = "checkbox" ng-click="vm.RAMSelect(vm.RAM.index)" checklist-model = "vm.choseRAM" checklist-value = "item.RAMsize"> {{item.RAMsize}}
+          </label> 
+        </div>
+        <div class="form-group col-sm-12" ng-if="vm.productType==='笔记本'">
+          <label for="firstname" class="col-sm-2 control-label">机身存储-ROM</label>
+          <label ng-repeat = "item in vm.parameter.bookROM" style="margin-right:20px;">
+            <input type = "checkbox" ng-click="vm.ROMSelect(vm.ROM.index)" checklist-model = "vm.choseROM" checklist-value = "item.ROMsize"> {{item.ROMsize}}
+          </label> 
+        </div>
+        <div class="form-group col-sm-12" ng-if="vm.productType==='手机'||vm.productType==='笔记本'||vm.productType==='平板'||vm.productType==='冰箱'||vm.productType==='鼠标'">
+          <label for="firstname" class="col-sm-2 control-label">颜色</label>
+          <label ng-repeat="item in vm.parameter.color" style="margin-right:20px;">
+            <input type="checkbox" data-checklist-model="vm.choseColor" data-checklist-value="item" ng-click="vm.colorSelect()"> {{item.color}}&nbsp;<img ng-src="{{item.imgUrl}}">
+          </label>
+        </div>
+        <div class="form-group col-sm-12" ng-if="vm.productType==='笔记本'">
+          <label for="screenSize" class="col-sm-2 control-label">屏幕尺寸</label>
+          <label ng-repeat="item in vm.parameter.screenSize" style="margin-right:20px;">
+            <input type="checkbox" data-checklist-model="vm.choseScreenSize" data-checklist-value="item.size" ng-click="vm.screenSizeSelect()"> {{item.size}}
+          </label>
+        </div>
+        <div class="form-group col-sm-12" ng-if="vm.productType==='电视'">
+          <label for="tvscreenSize" class="col-sm-2 control-label">屏幕尺寸</label>
+          <label ng-repeat="item in vm.parameter.tvscreenSize" style="margin-right:20px;">
+            <input type="checkbox" data-checklist-model="vm.chosetvScreenSize" data-checklist-value="item.size" ng-click="vm.tvscreenSizeSelect()"> {{item.size}}
+          </label>
+        </div>
+        <div class="form-group col-sm-12" ng-if="vm.productType==='电视'">
+          <label for="tvType" class="col-sm-2 control-label">电视版本</label>
+          <label ng-repeat="item in vm.parameter.tvType" style="margin-right:20px;">
+            <input type="checkbox" data-checklist-model="vm.chosetvType" data-checklist-value="item.type" ng-click="vm.tvTypeSelect()"> {{item.type}}
+          </label>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='手机'||vm.productType==='笔记本'||vm.productType==='平板'||vm.productType==='鼠标'">
+          <label for="configuration" class="col-sm-4 control-label">配置</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="configuration" ng-change="vm.configurationChange()" ng-model="vm.configuration" placeholder="配置"></textarea>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='手机'||vm.productType==='笔记本'||vm.productType==='平板'||vm.productType==='鼠标'">
+          <label for="weightSize" class="col-sm-4 control-label">重量与尺寸</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="weightSize" ng-change="vm.weightSizeChange()" ng-model="vm.weightSize" placeholder="重量与尺寸"></textarea>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='手机'">
+          <label for="charginge" class="col-sm-4 control-label">续航与快充</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="charginge" ng-change="vm.chargingeChange()" ng-model="vm.charginge" placeholder="续航与快充"></textarea>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='手机'||vm.productType==='平板'">
+          <label for="camera" class="col-sm-4 control-label">拍照与摄像</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="camera" ng-model="vm.camera" placeholder="拍照与摄像"></textarea>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='手机'||vm.productType==='笔记本'||vm.productType==='平板'">
+          <label for="screen" class="col-sm-4 control-label">屏幕</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="screen" ng-model="vm.screen" placeholder="屏幕类型"></textarea>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='手机'||vm.productType==='笔记本'||vm.productType==='平板'">
+          <label for="simCard" class="col-sm-4 control-label">网络</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="simCard" ng-model="vm.simCard" placeholder="网络"></textarea>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='手机'">
+          <label for="navigation" class="col-sm-4 control-label">导航定位</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="navigation" ng-model="vm.navigation" placeholder="导航定位"></textarea>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='手机'||vm.productType==='平板'">
+          <label for="sensors" class="col-sm-4 control-label">感应器</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="sensors" ng-model="vm.sensors" placeholder="感应器"></textarea>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='手机'">
+          <label for="playback" class="col-sm-4 control-label">多媒体播放</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="playback" ng-model="vm.playback" placeholder="多媒体播放"></textarea>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='手机'">
+          <label for="buttons" class="col-sm-4 control-label">指纹识别与按键</label>
+          <div class="col-sm-8">
+            <input class="form-control" placeholder="说明图片链接 url：" type="text" name="buttons" id="buttons"/>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='笔记本'">
+          <label for="memory" class="col-sm-4 control-label">内存</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="memory" ng-model="vm.memory" placeholder="内存"></textarea>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='笔记本'">
+          <label for="hardDisk" class="col-sm-4 control-label">硬盘</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="hardDisk" ng-model="vm.hardDisk" placeholder="硬盘"></textarea>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='笔记本'||vm.productType==='平板'">
+          <label for="video" class="col-sm-4 control-label">视频</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="video" ng-model="vm.video" placeholder="显卡及视频输出"></textarea>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='笔记本'||vm.productType==='平板'">
+          <label for="audio" class="col-sm-4 control-label">音频</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="audio" ng-model="vm.audio" placeholder="音频"></textarea>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='笔记本'">
+          <label for="battery" class="col-sm-4 control-label">电池电源</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="battery" ng-model="vm.battery" placeholder="电池电源"></textarea>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='笔记本'">
+          <label for="api" class="col-sm-4 control-label">外设接口</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="api" ng-model="vm.api" placeholder="外设接口"></textarea>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='笔记本'||vm.productType==='鼠标'">
+          <label for="system" class="col-sm-4 control-label">操作系统</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="system" ng-model="vm.system" placeholder="操作系统"></textarea>
+          </div>
+        </div>
+        <div class="form-group col-sm-6" ng-if="vm.productType==='鼠标'">
+          <label for="packingList" class="col-sm-4 control-label">包装清单</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" name="packingList" ng-model="vm.packingList" placeholder="包装清单"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <label for="firstname" class="col-sm-2 control-label">商品图片</label>
+        <div class="col-sm-10">
+          <a href="javascript:;" class="btn btn-info file">
+          <input type="file" name="file0" id="file0" multiple="multiple" />点击这里选择文件
+          </a>
+          <a class="btn btn-success" ng-click="vm.uploadFile('0')">上传图片</a>
+          <img ng-src="{{vm.showImg}}" id="img0" >
+        </div>
+      </div>
+      <div class="marginBottom50px col-sm-8 col-sm-offset-3">
+        <button ng-click="vm.updateProductKind()" ng-disabled="form.$invalid" class="btn btn-success">修改商品商品分类</button>
+      </div>
+    </form>
+  </div>
+    
+</div>

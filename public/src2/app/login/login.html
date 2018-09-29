@@ -1,0 +1,65 @@
+<section class="login">
+  <div class="topbar">
+    <div class="logo">HuHui</div><span class="title">欢迎登录</span>
+  </div>
+  <div class="wrap">
+    <div class="layout_panel">
+      <div class="layout">
+        <div class="nav_tabs_panel">
+          <div class="nav_tabs">管理员密码登录</div>
+        </div>
+        <div class="tabs-con tabs_con now">
+          <div class="login_area">
+            <form browser-autocomplete-form class="form-horizontal login" name="form">
+              <div class="form-group" ng-class="{'has-error': form.username.$invalid && !form.username.$pristine}">
+                <div class="col-lg-12 labelbox">
+                  <input type="text" class="form-control" name="username" ng-model="vm.name" placeholder="用户名" required>
+                  <div ng-if="form.username.$invalid && form.username.$dirty" ng-messages="form.username.$error">
+                    <small class="help-block" ng-message="required">请输入用户名</small>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group" ng-class="{'has-error': form.password.$invalid && !form.password.$pristine}">
+                <div class="col-lg-12 labelbox">
+                  <input type="password" class="form-control" name="password" ng-model="vm.password" placeholder="密码" required>
+                  <div ng-if="form.password.$invalid && form.password.$dirty" ng-messages="form.password.$error">
+                    <small class="help-block" ng-message="required">请输入密码</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-lg-12 marginbottom15px">
+                  <label class="checkbox-inline">
+                    <input id="checkbox" type="checkbox" ng-model="vm.remember"> 记住登录状态
+                  </label>
+                </div>
+                <div class="col-lg-12">
+                  <input type="button" class="btn btn-default btn-block btnadpt" ng-disabled="form.$invalid" value="立即登录" ng-click="vm.login()">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="login-error" ng-show="vm.errorType">
+              <p><i class="glyphicon glyphicon-info-sign"></i>&nbsp;{{vm.prompt}}</p>
+            </div>
+            <div ng-show="vm.waitType" class="lgoin-wait">
+              <p>正在登录请稍候......</p>
+            </div>
+            <div class="login-formbox">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div id="custom_display_4" class="n-footer">  
+    <p class="nf-intro"><span>Copyright © 2017 版本v0.0.1
+     毕业设计：胡辉</span></p>
+  </div>
+</section>

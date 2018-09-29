@@ -1,0 +1,123 @@
+<div class="site-header">
+  <div class="container">
+    <div class="header-logo">
+      <a ui-sref="indexContent" class="logo">HuHui 商城</a>
+    </div>
+    <div class="header-nav">
+      <ul class="nav-list J_navMainList clearfix">
+        <li id="J_navCategory" class="nav-category">
+          <a class="link-category" ui-sref="listContent"><span class="text">全部商品分类</span>&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-down"></span></a>
+          <div class="site-category {{vm.site_category}}"> 
+            <ul id="J_categoryList" class="site-category-list clearfix {{vm.site_category_list}}">
+              <li class="category-item">
+                <a class="title" target="_blank">手机
+                </a>
+                <div class="children clearfix children-col-2">
+                  <ul class="children-list children-list-col children-list-col-1" ng-repeat="item in vm.phoneArr">
+                    <li class="star-goods" ng-repeat="list in item" ng-if="list.productType==='手机'"> 
+                      <a class="link" ui-sref="buyphoneContent({kindId : list.kindId})" ng-click="vm.buyProduct(list.productName)">
+                        <img class="thumb" ng-src="{{list.productImg}}" style="width:auto;height:40px;" alt="">
+                        <span class="text">{{list.productName}}</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div> 
+              </li>
+              <li class="category-item">
+                <a class="title" target="_blank">笔记本
+                </a>
+                <div class="children clearfix children-col-2">
+                  <ul class="children-list children-list-col children-list-col-1" ng-repeat="item in vm.bookAirArr">
+                    <li class="star-goods" ng-repeat="list in item" ng-if="list.productType==='笔记本'"> 
+                      <a class="link" ui-sref="buybookairContent({kindId : list.kindId})" ng-click="vm.buyProduct(list.productName)">
+                        <img class="thumb" ng-src="{{list.productImg}}" style="width:auto;height:40px;" alt="">
+                        <span class="text">{{list.productName}}</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div> 
+              </li>
+              <li class="category-item">
+                <a class="title">平板
+                </a>
+                <div class="children clearfix children-col-2">
+                  <ul class="children-list children-list-col children-list-col-1" ng-repeat="item in vm.padArr">
+                    <li class="star-goods" ng-repeat="list in item" ng-if="list.productType==='平板'"> 
+                      <a class="link" ui-sref="buypadContent({kindId : list.kindId})">
+                        <img class="thumb" ng-src="{{list.productImg}}" style="width:auto;height:40px;" alt="">
+                        <span class="text">{{list.productName}}</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div> 
+              </li>
+              <li class="category-item">
+                <a class="title">电视
+                </a>
+                <div class="children clearfix children-col-2">
+                  <ul class="children-list children-list-col children-list-col-1" ng-repeat="item in vm.tvArr">
+                    <li class="star-goods" ng-repeat="list in item" ng-if="list.productType==='电视'"> 
+                      <a class="link" ui-sref="buytvContent({kindId : list.kindId})" ng-click="vm.buyProduct(list.productName)">
+                        <img class="thumb" ng-src="{{list.productImg}}" style="width:auto;height:40px;" alt="">
+                        <span class="text">{{list.productName}}</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div> 
+              </li>
+              <!-- <li class="category-item">
+                <a class="title">键盘
+                </a>
+                <div class="children clearfix children-col-2">
+                  <ul class="children-list children-list-col children-list-col-1" ng-repeat="item in vm.tvArr">
+                    <li class="star-goods" ng-repeat="list in item" ng-if="list.productType==='键盘'"> 
+                      <a class="link" ui-sref="buytvContent({kindId : list.kindId})" ng-click="vm.buyProduct(list.productName)">
+                        <img class="thumb" ng-src="{{list.productImg}}" style="width:auto;height:40px;" alt="">
+                        <span class="text">{{list.productName}}</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div> 
+              </li> -->
+              <li class="category-item">
+                <a class="title">鼠标
+                </a>
+                <div class="children clearfix children-col-2">
+                  <ul class="children-list children-list-col children-list-col-1" ng-repeat="item in vm.mouseArr">
+                    <li class="star-goods" ng-repeat="list in item" ng-if="list.productType==='鼠标'"> 
+                      <a class="link" ui-sref="buymouseContent({kindId : list.kindId})" ng-click="vm.buyProduct(list.productName)">
+                        <img class="thumb" ng-src="{{list.productImg}}" style="width:auto;height:40px;" alt="">
+                        <span class="text">{{list.productName}}</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div> 
+              </li>
+              <li class="category-item">
+                <a class="title">冰箱
+                </a>
+                <div class="children clearfix children-col-2">
+                  <ul class="children-list children-list-col children-list-col-1" ng-repeat="item in vm.iceboxArr">
+                    <li class="star-goods" ng-repeat="list in item" ng-if="list.productType==='冰箱'"> 
+                      <a class="link" ui-sref="buyIceboxContent({kindId : list.kindId})" ng-click="vm.buyProduct(list.productName)">
+                        <img class="thumb" ng-src="{{list.productImg}}" style="width:auto;height:40px;" alt="">
+                        <span class="text" style="">{{list.productName}}</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div> 
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="header-search">
+      <form id="J_searchForm" class="search-form clearfix">
+        <label for="search" class="hide">站内搜索</label>
+        <input class="search-text" type="search" id="search" name="keyword" ng-model="vm.keyword" autocomplete="off">
+        <button type="submit" ng-click="vm.searchProduct()" class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+      <div id="J_keywordList" class="keyword-list hide"><ul class="result-list"></ul></div></form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="person">
+  <ul class="breadcrumb">
+    <li><a ui-sref="home">主页</a></li>
+    <li><a ui-sref="orderContent">我的订单</a></li>
+  </ul>
+  <div class="orderInfo">
+    <div class="title">订单详情</div>
+    <div class="order_content">
+      <div class="col-sm-4">
+        <div class="order_title">订单号：{{vm.order.orderId}}</div>
+        <div class="order_title">付款方式：{{vm.order.orderPayType}}</div>
+        <div class="order_title">订单总价：{{vm.order.orderPrice}} 元</div>
+        <div class="order_title">订单状态：
+          <label ng-if="vm.order.orderState==='-1'">已取消</label>
+          <label ng-if="vm.order.orderState==='0'">待发货</label>
+          <label ng-if="vm.order.orderState==='1'">待收货</label>
+          <label ng-if="vm.order.orderState==='2'">待评价</label>
+        </div>
+      </div>
+      <div class="user_info col-sm-8">
+        <ul>
+          <li>
+            <div>收货人信息</div>
+            <div>收货人：{{vm.order.orderAddress.consignee}}</div>
+            <div>收货地址：{{vm.order.orderAddress.area.province}}{{vm.order.orderAddress.area.city}}{{vm.order.orderAddress.area.district}}{{vm.order.orderAddress.detailedAdd}}</div>
+            <div>联系电话：{{vm.order.orderAddress.phone}}</div>
+            <div>收货人：{{vm.order.orderAddress.consignee}}</div>
+          </li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <!-- <div class="progress" ng-if="vm.orderState!=='-1'">
+        <ul class="order_state">
+          <li ng-class="{'active':vm.orderState==='0'||vm.orderState==='1'||vm.orderState==='2'||vm.orderState==='3'}">拍下订单</li>
+          <li ng-class="{'active':vm.orderState==='1'||vm.orderState==='2'||vm.orderState==='3'}">商品出货</li>
+          <li ng-class="{'active':vm.orderState==='2'||vm.orderState==='3'}">确认收货</li>
+          <li ng-class="{'active':vm.orderState==='3'}">订单评价</li>
+          <div class="clear"></div>
+        </ul>
+        <div class="clear"></div>
+      </div> -->
+      <div class="product_info">
+          <table class="table table-bordered text-center">
+            <tr>
+              <td>商品</td>
+              <td>数量</td>
+              <td>单价</td>
+            </tr>
+            <tr ng-repeat="item in vm.order.orderProductIdList">
+              <td class="col-sm-4 text-left">
+                <img style="position:absolute;width:auto;height:60px;" ng-src="{{item.productInfo.productImg}}">
+                <div style="margin-left:80px;min-height:60px;">
+                  <div>{{item.productInfo.productName}}</div>
+                  <div>{{item.productInfo.productVersion.ver1}}&nbsp;&nbsp;&nbsp;&nbsp;{{item.productInfo.productVersion.ver2}}&nbsp;&nbsp;&nbsp;{{item.productInfo.productColor.color}}</div>
+                </div>
+                <div class="clear"></div>
+              </td>
+              <td class="col-sm-2">
+                {{item.num}}
+              </td>
+              <td class="col-sm-2">{{item.productInfo.productPrice}}</td>
+            </tr>
+          </table>
+          <!-- <li ng-repeat="item in vm.order.orderProductIdList">
+            <div class="col-sm-4"><img style="width:auto;height:60px;" ng-src="{{item.productInfo.productImg}}"></div>
+            <div class="col-sm-4 proInfo">
+              <div>{{item.productInfo.productName}}</div>
+              <div>{{item.productInfo.productVersion.ver1}}+{{item.productInfo.productVersion.ver2}}{{item.productInfo.productColor.color}}</div>
+            </div>
+            <div class="col-sm-1">{{item.num}}</div>
+            <div class="col-sm-2">{{item.productInfo.productPrice}}</div>
+            <div class="clear"></div>
+          </li> -->
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+ </div>
